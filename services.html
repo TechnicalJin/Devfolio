@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services - Full-Stack Developer Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- custom style CSS -->
+  <link rel="stylesheet" href="services.css">
+</head>
+
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" id="linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- Fullscreen Menu Overlay -->
+  <div id="fullscreenMenu" class="fullscreen-menu-overlay">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <button class="close-menu-btn btn btn-link text-light-custom position-absolute top-0 end-0 m-4 p-3"
+            id="closeMenuBtn">
+            <i class="fas fa-times fa-2x"></i>
+          </button>
+          <nav class="text-center">
+            <ul class="list-unstyled menu-list">
+              <li class="mb-4">
+                <a href="index.html" class="menu-link text-light-custom">Home</a>
+              </li>
+              <li class="mb-4">
+                <a href="about.html" class="menu-link text-light-custom">About</a>
+              </li>
+              <li class="mb-4">
+                <a href="services.html" class="menu-link text-light-custom">Services</a>
+              </li>
+              <li class="mb-4">
+                <a href="project.html" class="menu-link text-light-custom">Projects</a>
+              </li>
+              <li class="mb-4">
+                <a href="contact.html" class="menu-link text-light-custom">Contact</a>
+              </li>
+            </ul>
+            <div class="social-links mt-5">
+              <a href="#" class="social-link text-light-custom mx-3">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a href="#" class="social-link text-light-custom mx-3">
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="position-relative" id="mainHeader">
+    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4 header-content">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h2 class="m-0">
+              <a href="index.html" class="text-decoration-none content-title text-light-custom">Varun</a>
+            </h2>
+          </div>
+          <div class="col-6 text-end">
+            <button class="menu-toggle-btn btn btn-link text-light-custom p-0">
+              <i class="fas fa-bars fa-2x hamburger-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="services-hero-section text-center py-5 my-5" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="hero-badge mb-4">
+              <i class="fas fa-briefcase me-2"></i>
+              <span>Professional Services</span>
+            </div>
+            <h1 class="services-main-title display-1 fw-bold mb-4 syne-font">
+              What I Can Do For You
+            </h1>
+            <p class="services-subtitle lead text-muted-custom mb-5">
+              Comprehensive full-stack development services to bring your digital vision to life.
+              From concept to deployment, I deliver scalable, modern solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Grid Section -->
+      <section class="py-5 my-5">
+        <div class="row g-4">
+          <!-- Service Card 1: Full-Stack Development -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card h-100 p-5 rounded-4">
+              <div class="service-icon-wrapper mb-4">
+                <div class="service-icon">
+                  <i class="fas fa-layer-group fa-3x"></i>
+                </div>
+              </div>
+              <h3 class="service-title mb-3">Full-Stack Development</h3>
+              <p class="service-description text-muted-custom mb-4">
+                Custom web applications, e-commerce platforms, and SaaS solutions built with modern technologies.
+                End-to-end development from database design to responsive front-end interfaces.
+              </p>
+              <div class="tech-stack-section mb-4">
+                <h6 class="tech-label text-muted-custom mb-3">Technologies:</h6>
+                <div class="tech-badges">
+                  <span class="tech-badge">Spring Boot</span>
+                  <span class="tech-badge">React.js</span>
+                  <span class="tech-badge">MySQL</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-custom w-100">
+                Get Quote <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 2: Backend API Development -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card h-100 p-5 rounded-4">
+              <div class="service-icon-wrapper mb-4">
+                <div class="service-icon">
+                  <i class="fas fa-server fa-3x"></i>
+                </div>
+              </div>
+              <h3 class="service-title mb-3">Backend API Development</h3>
+              <p class="service-description text-muted-custom mb-4">
+                Robust RESTful APIs with secure JWT authentication, payment gateway integration, and scalable
+                architecture. Clean code following industry best practices.
+              </p>
+              <div class="tech-stack-section mb-4">
+                <h6 class="tech-label text-muted-custom mb-3">Technologies:</h6>
+                <div class="tech-badges">
+                  <span class="tech-badge">Java</span>
+                  <span class="tech-badge">Spring Boot</span>
+                  <span class="tech-badge">MySQL</span>
+                  <span class="tech-badge">JWT</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-custom w-100">
+                Discuss Project <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Frontend Development -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card h-100 p-5 rounded-4">
+              <div class="service-icon-wrapper mb-4">
+                <div class="service-icon">
+                  <i class="fas fa-code fa-3x"></i>
+                </div>
+              </div>
+              <h3 class="service-title mb-3">Frontend Development</h3>
+              <p class="service-description text-muted-custom mb-4">
+                Pixel-perfect, responsive user interfaces that work seamlessly across all devices. Modern React
+                applications and stunning landing pages that convert.
+              </p>
+              <div class="tech-stack-section mb-4">
+                <h6 class="tech-label text-muted-custom mb-3">Technologies:</h6>
+                <div class="tech-badges">
+                  <span class="tech-badge">React.js</span>
+                  <span class="tech-badge">Tailwind CSS</span>
+                  <span class="tech-badge">JavaScript</span>
+                </div>
+              </div>
+              <a href="project.html" class="btn btn-custom w-100">
+                See Examples <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 4: Third-Party Integrations -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card h-100 p-5 rounded-4">
+              <div class="service-icon-wrapper mb-4">
+                <div class="service-icon">
+                  <i class="fas fa-plug fa-3x"></i>
+                </div>
+              </div>
+              <h3 class="service-title mb-3">Third-Party Integrations</h3>
+              <p class="service-description text-muted-custom mb-4">
+                Seamlessly integrate payment gateways, AI services, email providers, and other third-party APIs into
+                your application. Secure and reliable implementations.
+              </p>
+              <div class="tech-stack-section mb-4">
+                <h6 class="tech-label text-muted-custom mb-3">Technologies:</h6>
+                <div class="tech-badges">
+                  <span class="tech-badge">Razorpay</span>
+                  <span class="tech-badge">Stripe</span>
+                  <span class="tech-badge">OpenAI</span>
+                  <span class="tech-badge">SendGrid</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-custom w-100">
+                Start Integration <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Me Section -->
+      <section class="py-5 my-5" data-aos="fade-up">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <h2 class="section-heading display-4 fw-bold mb-3">
+              <i class="fas fa-star text-yellow me-3"></i>
+              Why Choose Me
+            </h2>
+            <p class="text-muted-custom lead">
+              Delivering quality solutions with a focus on performance, security, and user experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card text-center p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-rocket fa-2x text-yellow"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Fast Delivery</h5>
+              <p class="text-muted-custom mb-0">Quick turnaround without compromising quality</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card text-center p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-shield-alt fa-2x text-yellow"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Secure Code</h5>
+              <p class="text-muted-custom mb-0">Industry-standard security practices</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card text-center p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-mobile-alt fa-2x text-yellow"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Responsive Design</h5>
+              <p class="text-muted-custom mb-0">Perfect on all devices and screen sizes</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-card text-center p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-headset fa-2x text-yellow"></i>
+              </div>
+              <h5 class="fw-bold mb-2">24/7 Support</h5>
+              <p class="text-muted-custom mb-0">Continuous support and maintenance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section text-center py-5 my-5 rounded-4" data-aos="clip-bottom">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="display-4 fw-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="lead text-muted-custom mb-5">
+              Let's discuss how I can help bring your ideas to life with cutting-edge technology and expert development.
+            </p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="contact.html" class="btn btn-custom btn-lg px-5">
+                Get In Touch <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+              <a href="project.html" class="btn btn-outline-custom btn-lg px-5">
+                View My Work <i class="fas fa-folder-open ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h3 class="text-light-custom mb-4 syne-font">Varun</h3>
+          <p class="text-muted-custom">Full-Stack Developer specializing in modern web technologies and scalable solutions.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="text-light-custom mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="footer-link text-muted-custom">Home</a>
+            </li>
+            <li class="mb-2">
+              <a href="about.html" class="footer-link text-muted-custom">About</a>
+            </li>
+            <li class="mb-2">
+              <a href="services.html" class="footer-link text-muted-custom">Services</a>
+            </li>
+            <li class="mb-2">
+              <a href="project.html" class="footer-link text-muted-custom">Projects</a>
+            </li>
+            <li class="mb-2">
+              <a href="contact.html" class="footer-link text-muted-custom">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="text-light-custom mb-4">Services</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <span class="text-muted-custom">Full-Stack Development</span>
+            </li>
+            <li class="mb-2">
+              <span class="text-muted-custom">Backend API Development</span>
+            </li>
+            <li class="mb-2">
+              <span class="text-muted-custom">Frontend Development</span>
+            </li>
+            <li class="mb-2">
+              <span class="text-muted-custom">Third-Party Integrations</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-light-custom mb-4">Connect</h5>
+          <div class="social-links">
+            <a href="#" class="social-icon text-light-custom me-3">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="#" class="social-icon text-light-custom me-3">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+          </div>
+          <p class="text-muted-custom mt-4">
+            <i class="fas fa-envelope me-2"></i>
+            contact@varun.dev
+          </p>
+        </div>
+      </div>
+      <hr class="my-4 border-secondary" />
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="text-muted-custom mb-0">
+            &copy; 2025 Varun. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JQuery js -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <!-- Plugins js -->
+  <script src="js/plugins.js"></script>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    // Menu Toggle with Animation
+    const menuBtn = document.querySelector('.menu-toggle-btn');
+    const closeBtn = document.querySelector('.close-menu-btn');
+    const fullscreenMenu = document.querySelector('.fullscreen-menu-overlay');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+    menuBtn.addEventListener('click', () => {
+      fullscreenMenu.classList.add('active');
+      setTimeout(() => {
+        hamburgerIcon.style.transform = 'rotate(90deg)';
+      }, 10);
+    });
+
+    closeBtn.addEventListener('click', () => {
+      fullscreenMenu.classList.remove('active');
+      setTimeout(() => {
+        hamburgerIcon.style.transform = 'rotate(0deg)';
+      }, 800);
+    });
+
+    // Sticky Header on Scroll
+    const header = document.getElementById('mainHeader');
+    const scrollProgressBar = document.getElementById('scrollProgress');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      // Scroll Progress Bar
+      const scrollPercent = (currentScroll / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollProgressBar.style.width = scrollPercent + '%';
+
+      // Header Hide/Show
+      if (currentScroll <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+      }
+
+      if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        // Scroll Down
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+      } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+        // Scroll Up
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Add smooth hover effect to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+  </script>
+</body>
+
+</html>

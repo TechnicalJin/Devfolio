@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Details - Varun Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- custom style CSS -->
+  <link rel="stylesheet" href="single-project.css">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" id="external-link" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14 3v2h3.59l-9.83 9.83l1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="check-circle" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+    </symbol>
+  </svg>
+
+  <!-- Fullscreen Menu Overlay -->
+  <div id="fullscreenMenu" class="fullscreen-menu-overlay">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <button id="closeMenuBtn" class="close-menu-btn position-absolute top-0 end-0 m-4">
+            <i class="fas fa-times fs-1"></i>
+          </button>
+
+          <nav class="fullscreen-menu-nav">
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="menu-link">Home</a></li>
+              <li><a href="about.html" class="menu-link">About Me</a></li>
+              <li><a href="services.html" class="menu-link">Services</a></li>
+              <li><a href="project.html" class="menu-link">Projects</a></li>
+              <li><a href="contact.html" class="menu-link">Contact</a></li>
+              <li><a href="documents/resume.pdf" download class="menu-link resume-link">
+                <i class="fas fa-download me-2"></i>Download Resume
+              </a></li>
+            </ul>
+          </nav>
+
+          <div class="menu-social-links mt-5">
+            <a href="https://github.com/TechnicalJin" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.fiverr.com/varunbuilds" target="_blank" class="social-link"><i class="fas fa-briefcase"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="position-relative">
+    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
+      <nav class="d-flex justify-content-between align-items-center">
+        <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Portfolio</div>
+        <button class="menu-toggle-btn btn d-flex align-items-center gap-2" data-aos="fade-left" data-aos-duration="1000">
+          <span class="text-light-custom fw-bold">MENU</span>
+          <i class="fas fa-bars text-light-custom"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Loading State -->
+  <div id="loadingState" class="container text-center py-5">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="text-light-custom mt-3">Loading project details...</p>
+  </div>
+
+  <!-- Error State -->
+  <div id="errorState" class="container text-center py-5" style="display: none;">
+    <i class="fas fa-exclamation-circle text-danger" style="font-size: 4rem;"></i>
+    <h2 class="text-light-custom mt-4">Project Not Found</h2>
+    <p class="text-muted">The project you're looking for doesn't exist.</p>
+    <a href="project.html" class="btn btn-custom mt-3">
+      <i class="fas fa-arrow-left me-2"></i>Back to Projects
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <main id="projectContent" style="display: none;">
+    <div class="container">
+      <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+
+        <!-- Project Header -->
+        <section id="project-header" class="my-5 py-5" data-aos="fade-up">
+          <span class="text-muted text-uppercase letter-spacing-2">PROJECT DETAILS</span>
+          
+          <div class="row d-flex flex-wrap">
+            <div class="col-lg-12 pb-5">
+              <h1 class="single-portfolio-title text-break" id="projectTitle"></h1>
+            </div>
+          </div>
+
+          <!-- Project Meta Info -->
+          <div class="row mb-5">
+            <div class="col-lg-12">
+              <div class="project-summary-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="summary-label">
+                  <i class="fas fa-info-circle me-2"></i>
+                  One-Line Summary
+                </h3>
+                <p class="summary-text" id="projectSummary"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Description -->
+          <div class="row mb-5" id="projectDescriptionSection" style="display: none;">
+            <div class="col-lg-12">
+              <div class="project-summary-card" data-aos="fade-up" data-aos-delay="250">
+                <h3 class="summary-label">
+                  <i class="fas fa-align-left me-2"></i>
+                  About This Project
+                </h3>
+                <p class="summary-text" id="projectDescription"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Highlights -->
+          <div class="row mb-5" id="highlightsSection" style="display: none;">
+            <div class="col-lg-12">
+              <div class="project-summary-card" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="summary-label">
+                  <i class="fas fa-bolt me-2"></i>
+                  Key Highlights
+                </h3>
+                <ul class="highlights-list" id="highlightsList"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Links -->
+          <div class="row mb-5">
+            <div class="col-lg-12">
+              <div class="project-links-card" data-aos="fade-up" data-aos-delay="350">
+                <h5 class="mb-3">
+                  <i class="fas fa-link me-2"></i>
+                  Quick Links
+                </h5>
+                <div class="d-flex flex-wrap gap-3" id="projectLinks">
+                  <!-- Links will be dynamically inserted here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack Section -->
+          <div class="tech-stack-section mb-5" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="section-heading">
+              <i class="fas fa-layer-group me-3"></i>
+              Tech Stack
+            </h2>
+            <div class="row g-4" id="techStackContainer">
+              <!-- Tech stack cards will be dynamically inserted here -->
+            </div>
+          </div>
+
+          <!-- Features Section -->
+          <div class="features-section mb-5" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="section-heading">
+              <i class="fas fa-star me-3"></i>
+              Key Features
+            </h2>
+            <div class="row g-4" id="featuresContainer">
+              <!-- Feature items will be dynamically inserted here -->
+            </div>
+          </div>
+
+          <!-- Business Impact Section -->
+          <div class="features-section mb-5" id="impactSection" style="display: none;" data-aos="fade-up" data-aos-delay="550">
+            <h2 class="section-heading">
+              <i class="fas fa-chart-line me-3"></i>
+              Business Impact
+            </h2>
+            <div class="row g-4">
+              <div class="col-lg-12">
+                <div class="impact-grid" id="impactContainer">
+                  <!-- Impact items will be dynamically inserted here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screenshots Section -->
+          <div class="screenshots-section mb-5" data-aos="fade-up" data-aos-delay="600">
+            <h2 class="section-heading">
+              <i class="fas fa-images me-3"></i>
+              Project Screenshots
+            </h2>
+            
+            <div class="row g-4" id="screenshotsContainer">
+              <!-- Screenshots will be dynamically inserted here -->
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="project-cta text-center py-5" data-aos="fade-up" data-aos-delay="700">
+            <h3 class="mb-4">Want to see more projects?</h3>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="projects.html" class="btn btn-custom">
+                <i class="fas fa-folder-open me-2"></i>
+                View All Projects
+              </a>
+              <a href="contact.html" class="btn btn-outline-custom">
+                <i class="fas fa-envelope me-2"></i>
+                Hire Me
+              </a>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-3">
+          <h3 class="text-light-custom content-title mb-4">Portfolio</h3>
+          <p class="text-light-custom mb-4">
+            Full-Stack Developer passionate about building modern web applications.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#"><i class="fab fa-github social-icon text-light-custom"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin social-icon text-light-custom"></i></a>
+            <a href="#"><i class="fab fa-twitter social-icon text-light-custom"></i></a>
+            <a href="#"><i class="fab fa-instagram social-icon text-light-custom"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link text-yellow">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="footer-link">About</a></li>
+            <li class="mb-2"><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+            <li class="mb-2"><a href="skills.html" class="footer-link">Skills</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="blog.html" class="footer-link">Blog</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5">
+          <p class="text-light-custom mb-4">
+            Available for freelance projects and full-time opportunities. Let's create something amazing together!
+          </p>
+          <p class="text-light-custom fst-italic fs-5"><a href="mailto:your.email@example.com"
+              class="text-light-custom text-decoration-none">your.email@example.com</a></p>
+        </div>
+      </div>
+
+      <div class="border-top border-light pt-4">
+        <p class="text-light-custom text-center">
+          ©2025 Portfolio. Built with passion and modern technologies.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include projects data -->
+  <script src="js/projects-data.js"></script>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Get project ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+
+    // Get DOM elements
+    const loadingState = document.getElementById('loadingState');
+    const errorState = document.getElementById('errorState');
+    const projectContent = document.getElementById('projectContent');
+
+    // Function to render project data
+    function renderProject(project) {
+      if (!project) {
+        // Show error state
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
+        return;
+      }
+
+      // Update page title
+      document.title = `${project.title} - Varun Portfolio`;
+
+      // Populate project title and summary
+      document.getElementById('projectTitle').textContent = project.title;
+      document.getElementById('projectSummary').textContent = project.oneLine;
+
+      // Populate description if available
+      if (project.description) {
+        const descSection = document.getElementById('projectDescriptionSection');
+        descSection.style.display = 'block';
+        document.getElementById('projectDescription').textContent = project.description;
+      }
+
+      // Populate highlights if available
+      if (project.highlights && project.highlights.length > 0) {
+        const highlightsSection = document.getElementById('highlightsSection');
+        highlightsSection.style.display = 'block';
+        const highlightsList = document.getElementById('highlightsList');
+        highlightsList.innerHTML = project.highlights.map(highlight => 
+          `<li><i class="fas fa-check-circle me-2"></i>${highlight}</li>`
+        ).join('');
+      }
+
+      // Populate project links
+      const linksContainer = document.getElementById('projectLinks');
+      linksContainer.innerHTML = '';
+      
+      if (project.liveUrl) {
+        linksContainer.innerHTML += `
+          <a href="${project.liveUrl}" target="_blank" class="project-link-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <use xlink:href="#external-link"></use>
+            </svg>
+            Live Demo
+          </a>
+        `;
+      }
+      
+      if (project.githubUrl) {
+        linksContainer.innerHTML += `
+          <a href="${project.githubUrl}" target="_blank" class="project-link-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <use xlink:href="#github"></use>
+            </svg>
+            GitHub Repository
+          </a>
+        `;
+      }
+
+      // Populate tech stack
+      const techStackContainer = document.getElementById('techStackContainer');
+      techStackContainer.innerHTML = '';
+
+      const techStackIcons = {
+        frontend: 'fa-desktop',
+        backend: 'fa-server',
+        tools: 'fa-tools'
+      };
+
+      Object.keys(project.techStack).forEach(category => {
+        const techs = project.techStack[category];
+        const icon = techStackIcons[category] || 'fa-code';
+        const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+
+        techStackContainer.innerHTML += `
+          <div class="col-md-4">
+            <div class="tech-stack-card">
+              <div class="tech-stack-icon">
+                <i class="fas ${icon}"></i>
+              </div>
+              <h4>${categoryName}</h4>
+              <div class="tech-list">
+                ${techs.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Populate features
+      const featuresContainer = document.getElementById('featuresContainer');
+      featuresContainer.innerHTML = '';
+
+      project.features.forEach(feature => {
+        featuresContainer.innerHTML += `
+          <div class="col-md-6">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#check-circle"></use>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h5>${feature.title}</h5>
+                <p>${feature.description}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Populate business impact if available
+      if (project.impact && project.impact.length > 0) {
+        const impactSection = document.getElementById('impactSection');
+        impactSection.style.display = 'block';
+        const impactContainer = document.getElementById('impactContainer');
+        impactContainer.innerHTML = project.impact.map(item => 
+          `<div class="impact-item">
+            <i class="fas fa-check-circle"></i>
+            <span>${item}</span>
+          </div>`
+        ).join('');
+      }
+
+      // Populate screenshots
+      const screenshotsContainer = document.getElementById('screenshotsContainer');
+      screenshotsContainer.innerHTML = '';
+
+      project.screenshots.forEach((screenshot, index) => {
+        const colClass = index === 0 || index === 3 ? 'col-12' : 'col-lg-6';
+        
+        // Check if the URL is a video file
+        const isVideo = screenshot.url.match(/\.(mp4|webm|ogg|mov)$/i);
+        
+        const mediaElement = isVideo 
+          ? `<video src="${screenshot.url}" class="img-fluid screenshot-img" controls autoplay muted loop playsinline>
+              Your browser does not support the video tag.
+            </video>`
+          : `<img src="${screenshot.url}" alt="${screenshot.label}" class="img-fluid screenshot-img">`;
+        
+        screenshotsContainer.innerHTML += `
+          <div class="${colClass}">
+            <div class="screenshot-wrapper">
+              <div class="screenshot-label">${screenshot.label}</div>
+              <figure class="screenshot-figure">
+                ${mediaElement}
+              </figure>
+            </div>
+          </div>
+        `;
+      });
+
+      // Hide loading, show content
+      loadingState.style.display = 'none';
+      projectContent.style.display = 'block';
+
+      // Reinitialize AOS for dynamically added elements
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }
+
+    // Load project data
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!projectId) {
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
+        return;
+      }
+
+      // Get project data
+      const project = getProjectData(projectId);
+      
+      // Render project
+      setTimeout(() => {
+        renderProject(project);
+      }, 500); // Small delay to show loading state
+    });
+
+    // Menu Toggle
+    const menuBtn = document.querySelector('.menu-toggle-btn');
+    const closeBtn = document.querySelector('.close-menu-btn');
+    const fullscreenMenu = document.querySelector('.fullscreen-menu-overlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    menuBtn.addEventListener('click', () => {
+      fullscreenMenu.style.display = 'block';
+      setTimeout(() => {
+        fullscreenMenu.classList.add('active');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    });
+
+    const closeMenu = () => {
+      fullscreenMenu.classList.remove('active');
+      setTimeout(() => {
+        fullscreenMenu.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }, 800);
+    };
+
+    closeBtn.addEventListener('click', closeMenu);
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+</body>
+
+</html>

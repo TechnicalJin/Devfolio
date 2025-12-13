@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Varun Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- custom style CSS -->
+  <link rel="stylesheet" href="project.css" />
+</head>
+
+<body>
+
+  <!-- Fullscreen Menu Overlay -->
+  <div id="fullscreenMenu" class="fullscreen-menu-overlay">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <button id="closeMenuBtn" class="close-menu-btn position-absolute top-0 end-0 m-4">
+            <i class="fas fa-times fs-1"></i>
+          </button>
+
+          <nav class="fullscreen-menu-nav">
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="menu-link">Home</a></li>
+              <li><a href="about.html" class="menu-link">About Me</a></li>
+              <li><a href="services.html" class="menu-link">Services</a></li>
+              <li><a href="project.html" class="menu-link">Projects</a></li>
+              <li><a href="contact.html" class="menu-link">Contact</a></li>
+              <li><a href="documents/resume.pdf" download class="menu-link resume-link">
+                <i class="fas fa-download me-2"></i>Download Resume
+              </a></li>
+            </ul>
+          </nav>
+
+          <div class="menu-social-links mt-5">
+            <a href="https://github.com/TechnicalJin" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.fiverr.com/varunbuilds" target="_blank" class="social-link"><i class="fas fa-briefcase"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header/Navigation -->
+  <header class="position-relative">
+    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
+      <nav class="d-flex justify-content-between align-items-center">
+        <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Varun</div>
+        <button class="menu-toggle-btn btn d-flex align-items-center gap-2" data-aos="fade-left" data-aos-duration="1000">
+          <span class="text-light-custom fw-bold">MENU</span>
+          <i class="fas fa-bars text-light-custom"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <div class="container">
+      <div data-aos="fade-up" data-aos-duration="800">
+        <span class="hero-badge">
+          <i class="fas fa-rocket me-2"></i>My Work
+        </span>
+      </div>
+      <h1 class="projects-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        Featured Projects
+      </h1>
+      <p class="projects-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        A collection of my recent work spanning web development, design, and creative solutions. 
+        Each project represents a unique challenge and showcases my passion for crafting exceptional digital experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-buttons" data-aos="fade-up" data-aos-duration="800">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-grid-2 me-2"></i>All Projects
+        </button>
+        <button class="filter-btn" data-filter="fullstack">
+          <i class="fas fa-laptop-code me-2"></i>Full-Stack
+        </button>
+        <button class="filter-btn" data-filter="backend">
+          <i class="fas fa-server me-2"></i>Backend
+        </button>
+        <button class="filter-btn" data-filter="frontend">
+          <i class="fas fa-palette me-2"></i>Frontend
+        </button>
+        <button class="filter-btn" data-filter="microservices">
+          <i class="fas fa-cubes me-2"></i>Microservices
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid">
+    <div class="container">
+      <div class="row g-4" id="projectsContainer">
+        <!-- Projects will be loaded dynamically here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="rounded-4 m-3 m-lg-4" data-aos="fade-up">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3 class="text-light-custom content-title mb-4" style="font-size: 42px;">Varun</h3>
+          <p class="text-light-custom mb-4">
+            Creating digital experiences that make a difference. Let's build something amazing together.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#"><i class="fab fa-github social-icon"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in social-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+            <a href="#"><i class="fab fa-dribbble social-icon"></i></a>
+            <a href="#"><i class="fab fa-behance social-icon"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">Home</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">About</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Projects</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5">
+          <p class="text-light-custom mb-3">
+            Let's collaborate and create something extraordinary together.
+          </p>
+          <p class="text-light-custom fs-5">
+            <a href="mailto:contact@varun.com" class="text-light-custom text-decoration-none">
+              <i class="far fa-envelope me-2"></i>contact@varun.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-top pt-4" style="border-color: rgba(59, 130, 246, 0.1) !important;">
+        <p class="text-light-custom text-center mb-0">
+          © 2025 Varun. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Projects Data -->
+  <script src="js/projects-data.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Load projects dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectsContainer = document.getElementById('projectsContainer');
+      
+      if (projectsContainer) {
+        const projectIds = getAllProjectIds();
+        
+        // Category mapping for filtering
+        const categoryMap = {
+          'ai-review': 'backend',
+          'shopify-multi-platform': 'fullstack',
+          'jwt-library': 'backend microservices',
+          'modernshop': 'frontend',
+          'prose-food-delivery': 'frontend',
+          'nextjs-landing': 'fullstack frontend'
+        };
+        
+        projectIds.forEach((projectId, index) => {
+          const project = getProjectData(projectId);
+          const category = categoryMap[projectId] || 'web';
+          
+          // Get first 2 tech items for tags
+          const techTags = [];
+          if (project.techStack.frontend && project.techStack.frontend.length > 0) {
+            techTags.push(project.techStack.frontend[0]);
+          }
+          if (project.techStack.backend && project.techStack.backend.length > 0) {
+            techTags.push(project.techStack.backend[0]);
+          }
+          
+          const cardHTML = `
+            <div class="col-lg-4 col-md-6" data-category="${category}" data-aos="fade-up" data-aos-delay="${index * 100}">
+              <div class="project-card">
+                <div class="project-image-wrapper">
+                  <img src="${project.thumbnail}" alt="${project.title}" class="project-image">
+                  <div class="project-overlay">
+                    <div class="project-tags">
+                      ${techTags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <div class="project-category">${project.category}</div>
+                  <h3 class="project-title">${project.title}</h3>
+                  <p class="project-description">
+                    ${project.oneLine}
+                  </p>
+                  <div class="project-meta">
+                    <span class="project-date">
+                      <i class="far fa-calendar me-2"></i>${project.date}
+                    </span>
+                    <a href="single-project.html?id=${projectId}" class="project-link">
+                      View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          projectsContainer.innerHTML += cardHTML;
+        });
+        
+        // Reinitialize AOS for dynamically added elements
+        AOS.refresh();
+      }
+    });
+
+    // Menu Toggle Functionality
+    const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+    const fullscreenMenu = document.getElementById('fullscreenMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    // Open menu
+    menuToggleBtn.addEventListener('click', () => {
+      fullscreenMenu.style.display = 'block';
+      setTimeout(() => {
+        fullscreenMenu.classList.add('active');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close menu
+    const closeMenu = () => {
+      fullscreenMenu.classList.remove('active');
+      setTimeout(() => {
+        fullscreenMenu.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }, 800);
+    };
+
+    closeMenuBtn.addEventListener('click', closeMenu);
+
+    // Close menu when clicking on a link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('[data-category]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category').split(' ');
+          
+          if (filterValue === 'all') {
+            // Show all cards
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          } else if (categories.includes(filterValue)) {
+            // Show matching cards
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          } else {
+            // Hide non-matching cards
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroSection = document.querySelector('.projects-hero');
+      if (heroSection) {
+        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Card hover effect enhancement
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+      });
+    });
+  </script>
+</body>
+
+</html>
