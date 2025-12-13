@@ -358,9 +358,9 @@ section .container {
     background-color: var(--light-bg);
 }
 
-.bg-light-alt {
+/* .bg-light-alt {
     background-color: var(--light-bg-alt);
-}
+} */
 
 .bg-dark-custom {
     background-color: var(--primary-color);
@@ -396,6 +396,164 @@ section .container {
     z-index: 2;
 }
 
+/* ========================================
+   UNIFIED ABOUT PANEL
+   ======================================== */
+
+.unified-about-panel {
+    background: rgba(26, 35, 50, 0.5) !important;
+    border: 1px solid rgba(94, 234, 212, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    min-height: 500px;
+}
+
+/* About Panel Columns */
+.about-panel-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 25, 47, 0.3);
+}
+
+.about-panel-right {
+    position: relative;
+    z-index: 2;
+}
+
+/* Photo Container in Unified Panel */
+.unified-about-panel .about-photo-container {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+}
+
+.unified-about-panel .about-profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid rgba(94, 234, 212, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.unified-about-panel .about-profile-photo:hover {
+    transform: scale(1.02);
+    border-color: rgba(94, 234, 212, 0.4);
+    box-shadow: 0 12px 40px rgba(94, 234, 212, 0.2);
+}
+
+/* Content styling in unified panel */
+.unified-about-panel .about-panel-right > div > *:not(.code-background) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Code Background for About Panel */
+.unified-about-panel .code-background {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 80%;
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    opacity: 0.08;
+    pointer-events: none;
+    white-space: pre;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* About Quote */
+.unified-about-panel .about-quote {
+    font-size: 1.125rem;
+    color: var(--secondary-color);
+    opacity: 0.9;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+/* About Text */
+.unified-about-panel .about-text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Tech Stack Section */
+.unified-about-panel .tech-stack-section {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(94, 234, 212, 0.15);
+    margin-top: 1.5rem;
+}
+
+.unified-about-panel .tech-stack-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.unified-about-panel .tech-stack-badges-about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.unified-about-panel .tech-badge-about {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: rgba(94, 234, 212, 0.1);
+    border: 1px solid rgba(94, 234, 212, 0.3);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.unified-about-panel .tech-badge-about:hover {
+    background: rgba(94, 234, 212, 0.2);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(94, 234, 212, 0.15);
+}
+
+.unified-about-panel .about-cta-button {
+    margin-top: 2rem;
+    width: fit-content;
+}
+
+/* Responsive Adjustments for Unified About Panel */
+@media (max-width: 767px) {
+    .unified-about-panel {
+        min-height: auto;
+    }
+    
+    .about-panel-left {
+        background: transparent;
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .about-panel-right {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .unified-about-panel .about-photo-container {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Original photo styles for fallback */
 .about-photo-container {
     position: relative;
     max-width: 400px;
@@ -1983,3 +2141,375 @@ nav .content-title {
             0 0 0 1px rgba(59, 130, 246, 0.1);
     }
 }
+
+/* ========================================
+   BENTO GRID LAYOUT IMPROVEMENTS
+   ======================================== */
+
+/* Maximum Content Width - Professional Container */
+.container {
+    max-width: 1440px !important;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1520px !important;
+    }
+}
+
+/* Hero Section - Split Layout Enhancement */
+.hero-left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-right: 2rem;
+}
+
+.hero-subtitle {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem !important;
+}
+
+.hero-description {
+    font-size: 1.125rem !important;
+    line-height: 1.75 !important;
+    opacity: 0.95;
+}
+
+.hero-cta-buttons .btn {
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-left-content {
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Experience & Education Side-by-Side Layout */
+.experience-card,
+.education-card {
+    height: 100%;
+    min-height: 450px;
+}
+
+@media (min-width: 992px) {
+    .experience-card {
+        margin-right: 1rem;
+    }
+    
+    .education-card {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .experience-card,
+    .education-card {
+        min-height: auto;
+        margin-top: 0 !important;
+    }
+}
+
+/* ========================================
+   UNIFIED CAREER HISTORY PANEL
+   ======================================== */
+
+.unified-career-panel {
+    background: rgba(26, 35, 50, 0.5) !important;
+    border: 1px solid rgba(94, 234, 212, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    min-height: 550px;
+}
+
+/* Career Panel Columns */
+.career-panel-left,
+.career-panel-right {
+    position: relative;
+    z-index: 2;
+}
+
+.career-panel-left {
+    padding-right: 3rem;
+}
+
+.career-panel-right {
+    padding-left: 3rem;
+}
+
+/* Vertical Divider Line at 60% Mark */
+.career-vertical-divider {
+    position: absolute;
+    top: 0;
+    left: 58.33%; /* 60% mark for the 7/5 column split */
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(94, 234, 212, 0.3) 10%,
+        rgba(94, 234, 212, 0.5) 50%,
+        rgba(94, 234, 212, 0.3) 90%,
+        transparent 100%
+    );
+    z-index: 1;
+}
+
+/* Add subtle glow to the divider */
+.career-vertical-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(94, 234, 212, 0.6);
+}
+
+/* Code Background for Unified Panel */
+.unified-career-panel .code-background {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 80%;
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    opacity: 0.08;
+    pointer-events: none;
+    white-space: pre;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Resume Download Button in Panel */
+.resume-download-btn {
+    width: 100%;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563EB 100%);
+    border: 2px solid var(--accent-blue);
+}
+
+.resume-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #2563EB 0%, var(--accent-blue) 100%);
+}
+
+/* Education Icon Accent in Unified Panel */
+.unified-career-panel .education-icon-accent {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: rgba(94, 234, 212, 0.06);
+    z-index: 0;
+}
+
+/* Responsive Adjustments for Unified Panel */
+@media (max-width: 991px) {
+    .unified-career-panel {
+        min-height: auto;
+    }
+    
+    .career-vertical-divider {
+        display: none;
+    }
+    
+    .career-panel-left,
+    .career-panel-right {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Horizontal divider for mobile */
+    .career-panel-left::after {
+        content: '';
+        display: block;
+        width: 80%;
+        height: 2px;
+        margin: 2rem auto;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(94, 234, 212, 0.3) 20%,
+            rgba(94, 234, 212, 0.5) 50%,
+            rgba(94, 234, 212, 0.3) 80%,
+            transparent 100%
+        );
+    }
+}
+
+@media (max-width: 768px) {
+    .career-panel-left,
+    .career-panel-right {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .resume-download-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Interests - Horizontal 3-Column Grid */
+.interest-card-horizontal {
+    background: rgba(26, 35, 50, 0.5);
+    border: 1px solid rgba(94, 234, 212, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.interest-card-horizontal:hover {
+    transform: translateY(-5px);
+    border-color: rgba(94, 234, 212, 0.4);
+    box-shadow: 0 8px 25px rgba(94, 234, 212, 0.15);
+    background: rgba(26, 35, 50, 0.7);
+}
+
+.interest-card-horizontal .interest-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    opacity: 0.9;
+}
+
+.interest-card-horizontal .subtitle {
+    font-size: 1.35rem;
+    color: var(--heading-color);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.interest-card-horizontal p {
+    color: var(--text-light);
+    line-height: 1.75;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.interest-card-horizontal .date-text {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* Visual Balance & Spacing */
+section.py-5.my-5 {
+    margin-top: 120px !important;
+    margin-bottom: 120px !important;
+}
+
+@media (max-width: 768px) {
+    section.py-5.my-5 {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+    }
+}
+
+/* About Section - Balanced Side-by-Side */
+.about-content-card {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    section .row.align-items-center {
+        min-height: 500px;
+    }
+}
+
+/* Eliminate Awkward Gaps with Consistent Grid */
+.row.g-4 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+.row.g-lg-5 {
+    --bs-gutter-x: 3rem;
+    --bs-gutter-y: 3rem;
+}
+
+@media (max-width: 991px) {
+    .row.g-lg-5 {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+}
+
+/* Enhanced Content Balance */
+.col-lg-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+}
+
+.col-lg-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+}
+
+/* Premium Feel - Card Consistency */
+.bg-light-alt,
+.bg-primary-subtle {
+    background: rgba(26, 35, 50, 0.5) !important;
+    border: 1px solid rgba(94, 234, 212, 0.15);
+}
+
+/* Vertical Rhythm - Consistent Section Spacing */
+section + section {
+    margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+    section + section {
+        margin-top: 60px;
+    }
+}
+
+/* Professional Typography Hierarchy */
+.content-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--heading-color);
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.4;
+}
+
+.date-text {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* End of Bento Grid Improvements */
