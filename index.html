@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-symbols">
     <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
       <path fill="none" stroke="currentColor"
         d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
@@ -168,9 +168,9 @@
 
           <nav class="fullscreen-menu-nav">
             <ul class="list-unstyled">
-              <li><a href="index.html" class="menu-link">Home</a></li>
+              <li><a href="#" class="menu-link" data-scroll-to="top">Home</a></li>
               <li><a href="about.html" class="menu-link">About Me</a></li>
-              <li><a href="services.html" class="menu-link">Services</a></li>
+              <li><a href="#" class="menu-link" data-scroll-to="#projects">Experience</a></li>
               <li><a href="project.html" class="menu-link">Projects</a></li>
               <li><a href="contact.html" class="menu-link">Contact</a></li>
               <li><a href="documents/resume.pdf" download class="menu-link resume-link">
@@ -202,8 +202,25 @@
   </div>
 
   <!-- Header/Hero Section -->
-  <header class="position-relative">
-    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
+  <header class="position-relative hero-section-enhanced">
+    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4 position-relative">
+      
+      <!-- Subtle Background Code Snippet - TODO 32 -->
+      <div class="hero-code-decoration">
+        <pre><code>// Developer.java
+public class Developer {
+    String name = "Varun";
+    String[] stack = {
+        "Spring Boot",
+        "React",
+        "MySQL"
+    };
+    
+    void buildScalableSystems() {
+        // Clean code + innovation
+    }
+}</code></pre>
+      </div>
 
       <nav class="d-flex justify-content-between">
         <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Varun</div>
@@ -217,9 +234,6 @@
 
       <div class="w-100 text-center overflow-hidden">
         <div class="syne-font hero-title text-yellow" data-aos="fade-up">Varun</div>
-        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="200">Varun</div>
-        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="400">Varun</div>
-        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="600">Varun</div>
       </div>
 
       <div class="banner-content">
@@ -232,7 +246,7 @@
                 <div class="swiper servicesSwiper">
                   <div class="swiper-wrapper">
 
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: Full-Stack Development -->
                     <div class="swiper-slide">
                       <div class="text-light-custom content-title fw-bold">Full-Stack Web Development</div>
                       <p class="text-light-custom mb-4">
@@ -240,7 +254,7 @@
                       </p>
                     </div>
 
-                    <!-- Slide 2 -->
+                    <!-- Slide 2: API Integrations -->
                     <div class="swiper-slide">
                       <div class="text-light-custom content-title fw-bold">API Integrations & Automation</div>
                       <p class="text-light-custom mb-4">
@@ -248,7 +262,7 @@
                       </p>
                     </div>
 
-                    <!-- Slide 3 -->
+                    <!-- Slide 3: Modern UI -->
                     <div class="swiper-slide">
                       <div class="text-light-custom content-title fw-bold">Modern UI/UX Development</div>
                       <p class="text-light-custom mb-4">
@@ -256,17 +270,27 @@
                       </p>
                     </div>
 
-                    <!-- Slide 4 -->
+                    <!-- Main Slide -->
                     <div class="swiper-slide">
-                      <div class="text-light-custom content-title fw-bold">Secure Authentication & Authorization</div>
-                      <p class="text-light-custom mb-4">
-                        I implement secure user authentication using Spring Security, JWT, and role-based access control to protect applications and ensure reliable session management.
+                      <div class="text-light-custom content-title fw-bold mb-4">Varun Jinjala</div>
+                      <h2 class="text-yellow fs-4 mb-4">Full-Stack Engineering with a Strong Backend Core</h2>
+                      <p class="text-light-custom mb-5">
+                        APIs, scalability, and clean system design.
                       </p>
+                      <div class="d-flex gap-3 flex-wrap hero-cta-buttons">
+                        <a href="#projects" class="btn btn-custom d-flex align-items-center gap-2">
+                          <span>View Projects</span>
+                          <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="documents/resume.pdf" download class="btn btn-outline-light d-flex align-items-center gap-2">
+                          <i class="fas fa-download"></i>
+                          <span>Download Resume</span>
+                        </a>
+                      </div>
                     </div>
 
                   </div>
 
-                  <div class="swiper-pagination text-start"></div>
                 </div>
               </div>
 
@@ -279,45 +303,81 @@
   </header>
 
     <!-- About Section -->
-    <section class="py-5 my-5 position-relative">
+    <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container">
-      <div class="row g-lg-5">
+      <div class="row">
         
-        <!-- Image -->
-        <div class="banner-image col-md-6" data-aos="clip-bottom" data-aos-duration="1000">
-          <img src="images/Varun_bg.png" class="img-fluid" alt="Varun Jinjala" />
+        <!-- Profile Photo -->
+        <div class="col-md-6 py-5" data-aos="clip-bottom" data-aos-duration="1000">
+          <div class="about-photo-container">
+            <img src="images/Varun_bg.png" class="img-fluid about-profile-photo" alt="Varun Jinjala" />
+          </div>
         </div>
 
-        <!-- Content -->
-        <div class="col-md-6" data-aos="clip-top" data-aos-delay="1000">
-          <div class="content-title mb-4 fw-bold">About 'Varun Jinjala'</div>
+        <!-- Content Card -->
+        <div class="col-md-6 py-5" data-aos="clip-top" data-aos-delay="1000">
+          <div class="bg-light-alt p-5 rounded-4 position-relative about-content-card">
+            
+            <!-- Code Background -->
+            <pre class="code-background"><code>// Developer.java
+public class Developer {
+    String name = "Varun Jinjala";
+    String role = "Full-Stack Developer";
+    int experience = 2; // years
+    
+    String[] stack = {
+        "Spring Boot",
+        "React",
+        "MySQL",
+        "REST APIs",
+        "JWT Auth"
+    };
+    
+    void buildScalableSolutions() {
+        // Clean code + real-world impact
+    }
+}</code></pre>
 
-          <blockquote class="fst-italic fs-4 mb-4 text-light-custom">
-            "I love turning ideas into real, scalable, and user-friendly applications."
-          </blockquote>
+            <div class="content-title mb-4 fw-bold">About Me</div>
 
-          <p class="mb-4 text-light-custom">
-            I'm a <strong class="text-yellow">Full-Stack Developer</strong> with <strong>2 years of hands-on experience</strong> building secure, scalable, 
-            and user-focused web applications. I help businesses and startups turn ideas into real products using 
-            <strong>Spring Boot, MySQL, React.js,</strong> and modern API-driven architecture.
-          </p>
+            <blockquote class="about-quote fst-italic mb-4">
+              "I love turning ideas into real, scalable, and user-friendly applications."
+            </blockquote>
 
-          <p class="mb-4 text-light-custom">
-            I've worked with companies like <strong class="text-yellow">Karmanye Tech LLP</strong> and <strong class="text-yellow">YRHP</strong>, 
-            delivering full-stack solutions, dashboards, authentication systems, integrations, and automation workflows.
-          </p>
+            <p class="mb-4 text-light-custom about-text">
+              I'm a <strong class="text-yellow">Full-Stack Developer</strong> with <strong>2 years of hands-on experience</strong> building secure, scalable, 
+              and user-focused web applications. I help businesses and startups turn ideas into real products using 
+              <strong>Spring Boot, MySQL, React.js,</strong> and modern API-driven architecture.
+            </p>
 
-          <p class="mb-5 text-muted-custom">
-            My development approach is simple: <strong>write clean code, build scalable systems, and create user experiences 
-            that feel smooth and intuitive.</strong> I enjoy solving real problems, optimizing performance, and continuously 
-            learning new technologies to stay ahead.
-          </p>
+            <p class="mb-4 text-light-custom about-text">
+              I've worked with companies like <strong class="text-yellow">Karmanye Tech LLP</strong> and <strong class="text-yellow">YRHP</strong>, 
+              delivering full-stack solutions, dashboards, authentication systems, integrations, and automation workflows.
+            </p>
 
-          <a href="about.html" class="btn btn-custom d-flex align-items-center gap-2" style="width: fit-content;">
-            <span>More About Me</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+            <p class="mb-4 text-light-custom about-text">
+              My development approach is simple: <strong>write clean code, build scalable systems, and create user experiences 
+              that feel smooth and intuitive.</strong> I enjoy solving real problems, optimizing performance, and continuously 
+              learning new technologies to stay ahead.
+            </p>
+
+            <div class="mb-4 tech-stack-section">
+              <p class="mb-3 text-muted-custom fw-semibold tech-stack-label">Primary tools & technologies:</p>
+              <div class="tech-stack-badges-about">
+                <span class="tech-badge-about">Spring Boot</span>
+                <span class="tech-badge-about">REST APIs</span>
+                <span class="tech-badge-about">Microservices</span>
+                <span class="tech-badge-about">JWT Auth</span>
+                <span class="tech-badge-about">React</span>
+                <span class="tech-badge-about">MySQL</span>
+                <span class="tech-badge-about">PostgreSQL</span>
+            </div>
+          </div>
+
+            <a href="about.html" class="btn btn-custom d-flex align-items-center gap-2 about-cta-button">
+              <span>More About Me</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
 
       </div>
     </div>
@@ -325,27 +385,43 @@
 
 
   <!-- Experiences Section -->
-  <section class="py-5 my-5 position-relative overflow-hidden">
+  <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container position-relative h-100">
-      <div class="position-absolute top-0 start-100 translate-middle-x">
-        <div class="syne-font section-title" data-aos="fade-up">Experiences</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="200">Experiences</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="400">Experiences</div>
-      </div>
-
       <div class="container">
         <div class="row">
           <div class="col-md-6 py-5">
 
-            <div class="bg-light-alt p-5 mt-5 rounded-4 overflow-hidden" data-aos="clip-top" data-aos-delay="1000">
+            <div class="bg-light-alt p-5 mt-5 rounded-4 overflow-hidden position-relative experience-card" data-aos="clip-top" data-aos-delay="1000">
+              <pre class="code-background"><code>// Experience.java
+public class Experience {
+    private String role = "Full-Stack Developer";
+    private String company = "Karmanye Tech LLP";
+    private String[] technologies = {
+        "Spring Boot",
+        "REST APIs", 
+        "MySQL",
+        "React",
+        "JWT Authentication"
+    };
+    
+    public void buildSecureSystems() {
+        // Clean architecture + real-world functionality
+    }
+}</code></pre>
               <div class="content-title mb-4 fw-bold">Experiences</div>
 
-              <div class="mb-5">
+              <div class="mb-5 experience-item">
                 <div class="date-text mb-2">2024 – Present</div>
-                <h3 class="subtitle mb-2">Full-Stack Developer — Karmanye Tech LLP, Surat</h3>
-                <p>
-                  Built and maintained full-stack applications using Spring Boot, MySQL, React.js, Tailwind CSS, and REST APIs. Developed secure role-based authentication systems and performance-optimized admin dashboards. Integrated OpenAI API, Razorpay payments, and other third-party services with robust logging & error handling. Delivered responsive UI components and improved overall product performance through clean architecture and modern frontend practices.
-                </p>
+                <h3 class="subtitle mb-3">Full-Stack Developer (Backend-Focused) — Karmanye Tech LLP, Surat</h3>
+                <div class="experience-separator"></div>
+                <p class="mb-3 mt-3"><strong>Key contributions:</strong></p>
+                <ul class="experience-list">
+                  <li>Built and maintained backend services using Spring Boot, REST APIs, and MySQL</li>
+                  <li>Implemented JWT-based authentication and role-based access control (RBAC)</li>
+                  <li>Designed and optimized APIs consumed by React-based admin dashboards</li>
+                  <li>Integrated OpenAI APIs and Razorpay payment gateway with structured logging and error handling</li>
+                  <li>Improved API performance and maintainability through clean architecture and modular design</li>
+                </ul>
               </div>
 
               <!-- <div>
@@ -366,26 +442,31 @@
   </section>
 
   <!-- Education Section -->
-  <section class="py-5 my-5 position-relative overflow-hidden">
+  <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container">
-      <div class="position-absolute top-0 start-50 translate-middle-x">
-        <div class="syne-font section-title" data-aos="fade-up">Education</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="200">Education</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="400">Education</div>
-      </div>
-
       <div class="row">
         <div class="col-md-6"></div>
         <div class="col-md-6 py-5">
-          <div class="bg-light-alt p-5 rounded-4" data-aos="clip-bottom" data-aos-duration="1000">
+          <div class="bg-light-alt p-5 rounded-4 position-relative education-card" data-aos="clip-bottom" data-aos-duration="1000">
+            <div class="education-icon-accent">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <pre class="code-background"><code>// Education.java
+public class Education {
+    String degree = "Bachelor of Engineering (IT)";
+    String college = "L. J. Institute of Engineering and Technology, Ahmedabad";
+    
+    String[] focus = {
+        "Software Engineering",
+        "Web Systems"
+    };
+}</code></pre>
             <div class="content-title mb-4 fw-bold">Education</div>
 
-            <div class="mb-5">
-              <!-- <div class="date-text mb-2">2022 – Present</div> -->
-              <h3 class="subtitle mb-2">Bachelors in Engineering in Information Technology</h3>
-              <p>
-                L. J. Institute of Engineering and Technology, Ahmedabad, Gujarat
-              </p>
+            <div class="mb-5 education-item">
+              <h3 class="subtitle mb-3 education-degree">Bachelor of Engineering (Information Technology)</h3>
+              <p class="mb-3 education-college">L. J. Institute of Engineering and Technology (LJIET), Ahmedabad, Gujarat</p>
+              <div class="date-text education-year">Graduated 2024</div>
             </div>
 
             <!-- <div>
@@ -402,50 +483,43 @@
   </section>
 
   <!-- Interests Section -->
-  <section class="py-5 my-5 position-relative">
+  <section class="py-5 my-5 position-relative subtle-grid-bg">
     <div class="container overflow-hidden">
-      <div class="position-absolute top-0 start-50 translate-middle-x">
-        <div class="syne-font section-title" data-aos="fade-up">Interests</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="200">Interests</div>
-        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="400">Interests</div>
-      </div>
-
       <div class="row">
         <div class="col-md-6 py-5">
-          <div class="bg-light-alt p-5 rounded-4" data-aos="clip-bottom" data-aos-duration="1000">
-            <div class="content-title mb-4 fw-bold">Interests</div>
+          <div class="p-5 rounded-4" data-aos="clip-bottom" data-aos-duration="1000">
+            <div class="content-title mb-5 fw-bold">Interests</div>
 
-            <div class="mb-5">
+            <div class="mb-4 interest-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="interest-icon">
+                <i class="fas fa-code"></i>
+              </div>
               <div class="date-text mb-2">Development</div>
-              <h3 class="subtitle mb-2">Building Full-Stack Applications</h3>
+              <h3 class="subtitle mb-3">Full-Stack Application Engineering</h3>
               <p>
-                I enjoy building complete applications using Spring Boot, MySQL, and React—focusing on clean architecture and real-world functionality.
+                Designing and building end-to-end applications with Spring Boot, React, and relational databases, with an emphasis on clean architecture and real-world use cases.
               </p>
             </div>
 
-            <div>
+            <div class="mb-4 interest-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="interest-icon">
+                <i class="fas fa-plug"></i>
+              </div>
               <div class="date-text mb-2">Integrations</div>
-              <h3 class="subtitle mb-2">API Engineering</h3>
+              <h3 class="subtitle mb-3">API Engineering & System Integrations</h3>
               <p>
-                I love working with APIs like OpenAI and Razorpay, creating smooth integrations and automation that enhance application capabilities.
+                Working with third-party APIs such as OpenAI and Razorpay to implement reliable integrations, automation flows, and secure data exchanges.
               </p>
             </div>
 
-            <hr class="my-5">
-
-            <!-- <div class="mb-5">
-              <div class="date-text mb-2">Design</div>
-              <h3 class="subtitle mb-2">Modern UI/UX</h3>
-              <p>
-                I enjoy crafting clean, responsive interfaces using Tailwind and React, with a focus on usability and smooth interactions.
-              </p>
-            </div> -->
-
-            <div>
+            <div class="interest-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="interest-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
               <div class="date-text mb-2">Growth</div>
-              <h3 class="subtitle mb-2">Continuous Learning</h3>
+              <h3 class="subtitle mb-3">Continuous Technical Improvement</h3>
               <p>
-                I love exploring new tools, technologies, and best practices to constantly improve my development skills.
+                Staying current with modern backend practices, frameworks, and tooling to improve code quality, system reliability, and maintainability.
               </p>
             </div>
 
@@ -457,7 +531,7 @@
   </section>
 
   <!-- Testimonials Section with Swiper -->
-  <section class="py-5 my-5 bg-yellow rounded-4 m-4">
+  <section class="py-5 my-5 testimonials-section rounded-4 m-4">
     <div class="container">
       <h2 class="content-title text-center mb-5" data-aos="fade-up">Testimonials</h2>
 
@@ -567,8 +641,8 @@
   </section>
 
   <!-- Latest Works Section with Swiper -->
-  <section class="py-5 my-5 position-relative">
-    <div class="bg-light-alt position-absolute bottom-0 start-0 w-100" style="height: 50%; border-radius: 20px;"></div>
+  <section id="projects" class="py-5 my-5 position-relative subtle-grid-bg">
+    <div class="bg-light-alt position-absolute bottom-0 start-0 w-100 projects-bg-accent"></div>
 
     <div class="container position-relative">
       <h2 class="content-title text-center mb-5" data-aos="fade-up">My Latest Works</h2>
@@ -588,9 +662,11 @@
       </div>
 
       <!-- View All Projects Button -->
-      <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-        <a href="project.html" class="btn btn-custom px-5 py-3">
-          <i class="fas fa-grid-2 me-2"></i>View All Projects
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <a href="project.html" class="btn btn-custom px-5 py-3 d-inline-flex align-items-center gap-2">
+          <i class="fas fa-th me-2"></i>
+          <span>View All Projects</span>
+          <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -739,17 +815,18 @@
         <div class="col-md-6" data-aos="fade-right">
           <h2 class="content-title mb-4 fw-bold">Leave A Message</h2>
           <p class="mb-4">
-            Lacinia in blandit euismod nisl. Lacinia interdum massa facilisis amet at massa. Et ultricies sollicitudin
-            nam sit. Est sit dolor faucibus risus morbi nunc. Sed morbi sodales lobortis massa.
+            Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, 
+            full-stack development projects, or just having a conversation about technology and ideas. 
+            Feel free to reach out!
           </p>
         </div>
 
         <div class="col-md-6" data-aos="fade-left">
-          <form class="d-flex flex-column gap-4">
-            <input type="text" class="form-control-custom form-control" placeholder="Your name here..." />
-            <input type="email" class="form-control-custom form-control" placeholder="Your email here..." />
-            <textarea class="form-control-custom form-control" placeholder="Your message here..." rows="4"></textarea>
-            <button class="btn btn-custom d-flex align-items-center justify-content-center gap-2">
+          <form class="d-flex flex-column gap-4" action="mailto:varunjinjala.company@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" class="form-control-custom form-control" placeholder="Your name here..." required />
+            <input type="email" name="email" class="form-control-custom form-control" placeholder="Your email here..." required />
+            <textarea name="message" class="form-control-custom form-control" placeholder="Your message here..." rows="4" required></textarea>
+            <button type="submit" class="btn btn-custom d-flex align-items-center justify-content-center gap-2">
               <span>Send Message</span>
               <i class="fas fa-arrow-right"></i>
             </button>
@@ -847,6 +924,31 @@
   <!-- Script js -->
   <script src="js/script.js"></script>
 
+  <!-- Scroll to Top Button - TODO 44 -->
+  <button id="scrollToTop" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Scroll to Top Button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
   <script>
     // Load latest projects dynamically
     document.addEventListener('DOMContentLoaded', function() {
@@ -859,17 +961,41 @@
         projectIds.forEach(projectId => {
           const project = getProjectData(projectId);
           
+          // Create tech stack badges
+          const techStackHTML = project.techStack ? 
+            `<div class="tech-stack-badges mb-3">
+              ${Object.values(project.techStack).flat().slice(0, 4).map(tech => 
+                `<span class="tech-badge">${tech}</span>`
+              ).join('')}
+            </div>` : '';
+          
           const slideHTML = `
             <div class="swiper-slide">
-              <a href="single-project.html?id=${projectId}" class="text-decoration-none">
-                <div class="card card-custom">
-                  <img src="${project.thumbnail}" class="img-fluid" alt="${project.title}" />
-                  <div class="card-body text-center">
-                    <div class="date-text mb-2">${project.category}</div>
-                    <h3 class="subtitle">${project.title}</h3>
+              <div class="project-card-enhanced">
+                <a href="single-project.html?id=${projectId}" class="project-image-link">
+                  <div class="project-image-wrapper">
+                    <img src="${project.thumbnail}" class="img-fluid" alt="${project.title}" />
+                  </div>
+                </a>
+                <div class="project-content">
+                  <div class="date-text mb-2">${project.category}</div>
+                  <h3 class="project-title mb-3">
+                    <a href="single-project.html?id=${projectId}" class="text-decoration-none">${project.title}</a>
+                  </h3>
+                  ${techStackHTML}
+                  <p class="project-description mb-4">${project.oneLine}</p>
+                  <div class="project-buttons">
+                    ${project.liveUrl ? 
+                      `<a href="${project.liveUrl}" target="_blank" class="btn btn-custom btn-sm me-2">
+                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                      </a>` : ''}
+                    ${project.githubUrl ? 
+                      `<a href="${project.githubUrl}" target="_blank" class="btn btn-outline-light btn-sm">
+                        <i class="fab fa-github me-1"></i>View Code
+                      </a>` : ''}
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           `;
           
@@ -895,9 +1021,11 @@
               breakpoints: {
                 768: {
                   slidesPerView: 2,
+                  spaceBetween: 30,
                 },
                 992: {
-                  slidesPerView: 3,
+                  slidesPerView: 2,
+                  spaceBetween: 40,
                 },
               },
             });
