@@ -238,10 +238,29 @@ public class Developer {
 
       <div class="banner-content">
         <div class="container">
-          <div class="row g-lg-5">
-            <div class="col-md-6"></div>
+          <div class="row g-lg-5 align-items-center">
+            <!-- Left Side: Text + CTA Buttons -->
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="500">
+              <div class="hero-left-content">
+                <h2 class="text-yellow fs-1 mb-4 hero-subtitle">Full-Stack Engineer with a Backend-Heavy Focus</h2>
+                <p class="text-light-custom mb-4 hero-description" style="font-size: 1.125rem; line-height: 1.75;">
+                  Building scalable systems, predictable APIs, and solutions that actually work.
+                </p>
+                <div class="d-flex gap-3 flex-wrap hero-cta-buttons">
+                  <a href="#projects" class="btn btn-custom d-flex align-items-center gap-2">
+                    <span>From Idea to API</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                  <a href="documents/resume.pdf" download class="btn btn-outline-light d-flex align-items-center gap-2">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Right Side: Service Cards -->
             <div class="col-md-6">
-              <div data-aos="text-reveal-up" data-aos-delay="1000"
+              <div data-aos="fade-left" data-aos-delay="1000"
                 class="text-animation m-0 bg-primary-subtle p-4 p-lg-5 rounded-3">
                 <div class="swiper servicesSwiper">
                   <div class="swiper-wrapper">
@@ -270,24 +289,7 @@ public class Developer {
                       </p>
                     </div>
 
-                    <!-- Main Slide -->
-                    <div class="swiper-slide">
-                      <div class="text-light-custom content-title fw-bold mb-4">Varun Jinjala</div>
-                      <h2 class="text-yellow fs-4 mb-4">Full-Stack Engineering with a Strong Backend Core</h2>
-                      <p class="text-light-custom mb-5">
-                        APIs, scalability, and clean system design.
-                      </p>
-                      <div class="d-flex gap-3 flex-wrap hero-cta-buttons">
-                        <a href="#projects" class="btn btn-custom d-flex align-items-center gap-2">
-                          <span>View Projects</span>
-                          <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="documents/resume.pdf" download class="btn btn-outline-light d-flex align-items-center gap-2">
-                          <i class="fas fa-download"></i>
-                          <span>Download Resume</span>
-                        </a>
-                      </div>
-                    </div>
+                    <!-- Removed Main Slide - moved to left side -->
 
                   </div>
 
@@ -302,21 +304,25 @@ public class Developer {
 
   </header>
 
-    <!-- About Section -->
+    <!-- About Section - Unified Panel -->
     <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container">
-      <div class="row">
+      <!-- Unified About Panel -->
+      <div class="unified-about-panel bg-light-alt p-0 rounded-4 overflow-hidden position-relative" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row g-0 align-items-center">
         
-        <!-- Profile Photo -->
-        <div class="col-md-6 py-5" data-aos="clip-bottom" data-aos-duration="1000">
-          <div class="about-photo-container">
-            <img src="images/Varun_bg.png" class="img-fluid about-profile-photo" alt="Varun Jinjala" />
+        <!-- Profile Photo - Left Side -->
+        <div class="col-md-5 about-panel-left">
+          <div class="p-5">
+            <div class="about-photo-container">
+              <img src="images/Varun_bg.png" class="img-fluid about-profile-photo" alt="Varun Jinjala" />
+            </div>
           </div>
         </div>
 
-        <!-- Content Card -->
-        <div class="col-md-6 py-5" data-aos="clip-top" data-aos-delay="1000">
-          <div class="bg-light-alt p-5 rounded-4 position-relative about-content-card">
+        <!-- About Content - Right Side -->
+        <div class="col-md-7 about-panel-right">
+          <div class="p-5 position-relative">
             
             <!-- Code Background -->
             <pre class="code-background"><code>// Developer.java
@@ -341,24 +347,27 @@ public class Developer {
             <div class="content-title mb-4 fw-bold">About Me</div>
 
             <blockquote class="about-quote fst-italic mb-4">
-              "I love turning ideas into real, scalable, and user-friendly applications."
+              "I build systems that scale, APIs that make sense, and applications that solve real problems."
             </blockquote>
 
             <p class="mb-4 text-light-custom about-text">
-              I'm a <strong class="text-yellow">Full-Stack Developer</strong> with <strong>2 years of hands-on experience</strong> building secure, scalable, 
-              and user-focused web applications. I help businesses and startups turn ideas into real products using 
-              <strong>Spring Boot, MySQL, React.js,</strong> and modern API-driven architecture.
+              I'm a full-stack engineer with 2 years of experience turning complex requirements into clean, working solutions. 
+              My focus is backend architecture—<strong>Spring Boot, MySQL, REST APIs</strong>—but I handle the full stack when needed.
             </p>
 
             <p class="mb-4 text-light-custom about-text">
-              I've worked with companies like <strong class="text-yellow">Karmanye Tech LLP</strong> and <strong class="text-yellow">YRHP</strong>, 
-              delivering full-stack solutions, dashboards, authentication systems, integrations, and automation workflows.
+              I've worked with <strong class="text-yellow">Karmanye Tech LLP</strong> and <strong class="text-yellow">YRHP</strong>, 
+              building authentication systems, payment integrations, admin dashboards, and API-driven architectures. 
+              My approach: write maintainable code, design for scalability, fail gracefully, and treat security as non-negotiable.
             </p>
 
             <p class="mb-4 text-light-custom about-text">
-              My development approach is simple: <strong>write clean code, build scalable systems, and create user experiences 
-              that feel smooth and intuitive.</strong> I enjoy solving real problems, optimizing performance, and continuously 
-              learning new technologies to stay ahead.
+              I don't chase trends—I use what works. Currently working with Spring Boot, React, MySQL, and modern tooling that gets the job done.
+            </p>
+
+            <p class="mb-4 text-light-custom about-text">
+              <strong>Why I code:</strong> Because I like building things that actually work, breaking down complex problems into logical systems, 
+              and having control over solutions from start to finish.
             </p>
 
             <div class="mb-4 tech-stack-section">
@@ -379,19 +388,23 @@ public class Developer {
               <i class="fas fa-arrow-right"></i>
             </a>
 
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   </section>
 
 
-  <!-- Experiences Section -->
+  <!-- Career History Section - Unified Panel -->
   <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container position-relative h-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 py-5">
-
-            <div class="bg-light-alt p-5 mt-5 rounded-4 overflow-hidden position-relative experience-card" data-aos="clip-top" data-aos-delay="1000">
+      <!-- Unified Career History Panel -->
+      <div class="unified-career-panel bg-light-alt p-0 rounded-4 overflow-hidden position-relative" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row g-0 h-100">
+          <!-- Experience - Left Column (60%) -->
+          <div class="col-lg-7 career-panel-left">
+            <div class="p-5 h-100">
               <pre class="code-background"><code>// Experience.java
 public class Experience {
     private String role = "Full-Stack Developer";
@@ -414,13 +427,22 @@ public class Experience {
                 <div class="date-text mb-2">2024 – Present</div>
                 <h3 class="subtitle mb-3">Full-Stack Developer (Backend-Focused) — Karmanye Tech LLP, Surat</h3>
                 <div class="experience-separator"></div>
-                <p class="mb-3 mt-3"><strong>Key contributions:</strong></p>
+                
+                <p class="mb-2 mt-3"><strong>What I built:</strong></p>
+                <ul class="experience-list mb-3">
+                  <li>Backend services and REST APIs using Spring Boot and MySQL</li>
+                  <li>JWT authentication with role-based access control (RBAC)</li>
+                  <li>Payment gateway integration (Razorpay) with proper error handling</li>
+                  <li>OpenAI API integration with structured logging</li>
+                  <li>Admin dashboards consumed by React frontends</li>
+                </ul>
+                
+                <p class="mb-2"><strong>What I focused on:</strong></p>
                 <ul class="experience-list">
-                  <li>Built and maintained backend services using Spring Boot, REST APIs, and MySQL</li>
-                  <li>Implemented JWT-based authentication and role-based access control (RBAC)</li>
-                  <li>Designed and optimized APIs consumed by React-based admin dashboards</li>
-                  <li>Integrated OpenAI APIs and Razorpay payment gateway with structured logging and error handling</li>
-                  <li>Improved API performance and maintainability through clean architecture and modular design</li>
+                  <li>API predictability and documentation</li>
+                  <li>Performance optimization and query efficiency</li>
+                  <li>Clean architecture and modular code</li>
+                  <li>Graceful error handling and security-first design</li>
                 </ul>
               </div>
 
@@ -432,22 +454,14 @@ public class Experience {
                 </p>
               </div> -->
             </div>
-
           </div>
-          <div class="col-md-6"></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6 py-5">
-          <div class="bg-light-alt p-5 rounded-4 position-relative education-card" data-aos="clip-bottom" data-aos-duration="1000">
+          
+          <!-- Vertical Divider Line -->
+          <div class="career-vertical-divider"></div>
+          
+          <!-- Education - Right Column (40%) -->
+          <div class="col-lg-5 career-panel-right">
+            <div class="p-5 h-100 d-flex flex-column justify-content-center">
             <div class="education-icon-accent">
               <i class="fas fa-graduation-cap"></i>
             </div>
@@ -463,10 +477,18 @@ public class Education {
 }</code></pre>
             <div class="content-title mb-4 fw-bold">Education</div>
 
-            <div class="mb-5 education-item">
+            <div class="mb-4 education-item">
               <h3 class="subtitle mb-3 education-degree">Bachelor of Engineering (Information Technology)</h3>
-              <p class="mb-3 education-college">L. J. Institute of Engineering and Technology (LJIET), Ahmedabad, Gujarat</p>
-              <div class="date-text education-year">Graduated 2024</div>
+              <p class="mb-2 education-college">L. J. Institute of Engineering and Technology, Ahmedabad, Gujarat</p>
+              <p class="text-muted-custom" style="font-size: 0.9rem; font-style: italic;">(Education is just context, not the main story)</p>
+            </div>
+
+            <!-- Resume Download Button -->
+            <div class="mt-4 pt-3">
+              <a href="documents/resume.pdf" download class="btn btn-custom d-flex align-items-center justify-content-center gap-2 resume-download-btn">
+                <i class="fas fa-download"></i>
+                <span>Download Full Resume</span>
+              </a>
             </div>
 
             <!-- <div>
@@ -476,56 +498,67 @@ public class Education {
                 Vitae aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam nesciunt facilis!
               </p>
             </div> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- Unified Career History Panel Ends Here -->
 
-  <!-- Interests Section -->
+  <!-- Interests Section - 3-Column Horizontal Grid -->
   <section class="py-5 my-5 position-relative subtle-grid-bg">
     <div class="container overflow-hidden">
-      <div class="row">
-        <div class="col-md-6 py-5">
-          <div class="p-5 rounded-4" data-aos="clip-bottom" data-aos-duration="1000">
-            <div class="content-title mb-5 fw-bold">Interests</div>
-
-            <div class="mb-4 interest-card" data-aos="fade-up" data-aos-delay="100">
-              <div class="interest-icon">
-                <i class="fas fa-code"></i>
-              </div>
-              <div class="date-text mb-2">Development</div>
-              <h3 class="subtitle mb-3">Full-Stack Application Engineering</h3>
-              <p>
-                Designing and building end-to-end applications with Spring Boot, React, and relational databases, with an emphasis on clean architecture and real-world use cases.
-              </p>
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="content-title mb-2 fw-bold text-center" data-aos="fade-up">Interests</div>
+          <p class="text-center text-muted-custom" data-aos="fade-up" data-aos-delay="100">Areas that drive my continuous growth and technical passion</p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Card 1: Development -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="interest-card-horizontal h-100 p-4 rounded-4">
+            <div class="interest-icon mb-3">
+              <i class="fas fa-code"></i>
             </div>
-
-            <div class="mb-4 interest-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="interest-icon">
-                <i class="fas fa-plug"></i>
-              </div>
-              <div class="date-text mb-2">Integrations</div>
-              <h3 class="subtitle mb-3">API Engineering & System Integrations</h3>
-              <p>
-                Working with third-party APIs such as OpenAI and Razorpay to implement reliable integrations, automation flows, and secure data exchanges.
-              </p>
-            </div>
-
-            <div class="interest-card" data-aos="fade-up" data-aos-delay="300">
-              <div class="interest-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="date-text mb-2">Growth</div>
-              <h3 class="subtitle mb-3">Continuous Technical Improvement</h3>
-              <p>
-                Staying current with modern backend practices, frameworks, and tooling to improve code quality, system reliability, and maintainability.
-              </p>
-            </div>
-
+            <div class="date-text mb-2">Development</div>
+            <h3 class="subtitle mb-3">Full-Stack Application Engineering</h3>
+            <p>
+              Designing and building end-to-end applications with Spring Boot, React, and relational databases, with an emphasis on clean architecture and real-world use cases.
+            </p>
           </div>
         </div>
-        <div class="col-md-6"></div>
+
+        <!-- Card 2: Integrations -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="interest-card-horizontal h-100 p-4 rounded-4">
+            <div class="interest-icon mb-3">
+              <i class="fas fa-plug"></i>
+            </div>
+            <div class="date-text mb-2">Integrations</div>
+            <h3 class="subtitle mb-3">API Engineering & System Integrations</h3>
+            <p>
+              Working with third-party APIs such as OpenAI and Razorpay to implement reliable integrations, automation flows, and secure data exchanges.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Growth -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="interest-card-horizontal h-100 p-4 rounded-4">
+            <div class="interest-icon mb-3">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="date-text mb-2">Growth</div>
+            <h3 class="subtitle mb-3">Continuous Technical Improvement</h3>
+            <p>
+              Staying current with modern backend practices, frameworks, and tooling to improve code quality, system reliability, and maintainability.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
