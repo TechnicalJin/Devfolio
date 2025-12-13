@@ -361,6 +361,15 @@
         `;
       }
 
+      if (project.postmanUrl) {
+        linksContainer.innerHTML += `
+          <a href="${project.postmanUrl}" target="_blank" class="project-link-btn">
+            <i class="fas fa-book" style="width: 20px; height: 20px; font-size: 18px;"></i>
+            API Documentation Postman
+          </a>
+        `;
+      }
+
       // Populate tech stack
       const techStackContainer = document.getElementById('techStackContainer');
       techStackContainer.innerHTML = '';

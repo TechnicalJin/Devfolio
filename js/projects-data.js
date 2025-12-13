@@ -192,7 +192,8 @@ const projectsData = {
     date: "2024",
     liveUrl: null,
     githubUrl: "https://github.com/TechnicalJin",
-    thumbnail: "images/Portfolio_Image/default-backend.png",
+    postmanUrl: "https://documenter.getpostman.com/view/43246363/2sB3dSRpKx",
+    thumbnail: "images/Portfolio_Image/default-backend.jpg",
     
     description: `JWT-STUDENT-LIBRARY is an enterprise-grade, cloud-ready Library Management System built with a modern microservices architecture. Designed for academic institutions and multi-campus environments, it centralizes book, student, loan, and reservation management with secure JWT authentication, event-driven workflows, and real-time operational automation.`,
     
@@ -201,7 +202,8 @@ const projectsData = {
       "Strong Security: Stateless JWT (HS256) with RBAC, BCrypt hashing, method-level @PreAuthorize",
       "Event-Driven: Apache Kafka integration for async workflows and service orchestration",
       "Real-Time Automation: Scheduled overdue detection, fine calculation, and reservation workflows",
-      "Multi-Campus Ready: Designed for 10,000+ students, 50,000+ books with optimized queries"
+      "Multi-Campus Ready: Designed for 10,000+ students, 50,000+ books with optimized queries",
+      "Complete API Documentation: Postman collection with all endpoints, request/response examples"
     ],
     
     techStack: {
@@ -248,7 +250,7 @@ const projectsData = {
     screenshots: [
       {
         label: "Microservices Architecture",
-        url: "images/Portfolio_Image/default-backend.png"
+        url: "images/Portfolio_Image/default-backend.jpg"
       }
     ]
   },
