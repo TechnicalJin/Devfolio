@@ -311,73 +311,57 @@
   </main>
 
   <!-- Footer Section -->
-  <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+  <footer class="rounded-4 m-3 m-lg-4" data-aos="fade-up">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-          <h3 class="text-light-custom mb-4 syne-font">Varun</h3>
-          <p class="text-muted-custom">Full-Stack Developer specializing in modern web technologies and scalable solutions.</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-          <h5 class="text-light-custom mb-4">Quick Links</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="index.html" class="footer-link text-muted-custom">Home</a>
-            </li>
-            <li class="mb-2">
-              <a href="about.html" class="footer-link text-muted-custom">About</a>
-            </li>
-            <li class="mb-2">
-              <a href="services.html" class="footer-link text-muted-custom">Services</a>
-            </li>
-            <li class="mb-2">
-              <a href="project.html" class="footer-link text-muted-custom">Projects</a>
-            </li>
-            <li class="mb-2">
-              <a href="contact.html" class="footer-link text-muted-custom">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-          <h5 class="text-light-custom mb-4">Services</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <span class="text-muted-custom">Full-Stack Development</span>
-            </li>
-            <li class="mb-2">
-              <span class="text-muted-custom">Backend API Development</span>
-            </li>
-            <li class="mb-2">
-              <span class="text-muted-custom">Frontend Development</span>
-            </li>
-            <li class="mb-2">
-              <span class="text-muted-custom">Third-Party Integrations</span>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5 class="text-light-custom mb-4">Connect</h5>
-          <div class="social-links">
-            <a href="#" class="social-icon text-light-custom me-3">
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="#" class="social-icon text-light-custom me-3">
-              <i class="fab fa-github fa-2x"></i>
-            </a>
+      <div class="row mb-5">
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3 class="text-light-custom content-title mb-4" style="font-size: 42px;">Varun</h3>
+          <p class="text-light-custom mb-4">
+            Creating digital experiences that make a difference. Let's build something amazing together.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#"><i class="fab fa-github social-icon"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in social-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+            <a href="#"><i class="fab fa-dribbble social-icon"></i></a>
+            <a href="#"><i class="fab fa-behance social-icon"></i></a>
           </div>
-          <p class="text-muted-custom mt-4">
-            <i class="fas fa-envelope me-2"></i>
-            contact@varun.dev
+        </div>
+
+        <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="footer-link">About</a></li>
+            <li class="mb-2"><a href="project.html" class="footer-link">Projects</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Services</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5">
+          <p class="text-light-custom mb-3">
+            Let's collaborate and create something extraordinary together.
+          </p>
+          <p class="text-light-custom fs-5">
+            <a href="mailto:contact@varun.com" class="text-light-custom text-decoration-none">
+              <i class="far fa-envelope me-2"></i>contact@varun.com
+            </a>
           </p>
         </div>
       </div>
-      <hr class="my-4 border-secondary" />
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="text-muted-custom mb-0">
-            &copy; 2025 Varun. All rights reserved.
-          </p>
-        </div>
+
+      <div class="border-top pt-4" style="border-color: rgba(59, 130, 246, 0.1) !important;">
+        <p class="text-light-custom text-center mb-0">
+          © 2025 Varun. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
@@ -445,6 +429,19 @@
       }
       lastScroll = currentScroll;
     });
+
+    // Smooth scroll for anchor links (applies to footer links with # anchors)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && document.querySelector(href)) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
     // Add smooth hover effect to service cards
     const serviceCards = document.querySelectorAll('.service-card');

@@ -205,22 +205,25 @@
   <header class="position-relative hero-section-enhanced">
     <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4 position-relative">
       
-      <!-- Subtle Background Code Snippet - TODO 32 -->
-      <div class="hero-code-decoration">
-        <pre><code>// Developer.java
+      <!-- Code Background Element - Hero Section -->
+      <div class="code-bg-decoration hero-code">// VarunJinjala.java
 public class Developer {
-    String name = "Varun";
-    String[] stack = {
-        "Spring Boot",
-        "React",
-        "MySQL"
-    };
+    private String role = "Full-Stack Engineer";
+    private String focus = "Backend-Heavy";
     
-    void buildScalableSystems() {
-        // Clean code + innovation
+    public String[] getSkills() {
+        return new String[]{
+            "Spring Boot",
+            "REST APIs", 
+            "MySQL",
+            "React.js"
+        };
     }
-}</code></pre>
-      </div>
+    
+    public boolean buildsScalableSystems() {
+        return true;
+    }
+}</div>
 
       <nav class="d-flex justify-content-between">
         <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Varun</div>
@@ -307,6 +310,26 @@ public class Developer {
     <!-- About Section - Unified Panel -->
     <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container">
+      
+      <!-- Code Background Element - About Section -->
+      <div class="code-bg-decoration about-code">// DeveloperPrinciples.java
+public interface DeveloperPrinciples {
+    
+    // APIs should be predictable
+    ResponseEntity<?> designCleanAPI();
+    
+    // Systems should fail gracefully
+    void handleErrorsGracefully(Exception e);
+    
+    // Security is not optional
+    @Secured("ROLE_USER")
+    void implementAuthentication();
+    
+    // Performance is a feature
+    @Cacheable("optimized")
+    List<Data> optimizeQueries();
+}</div>
+      
       <!-- Unified About Panel -->
       <div class="unified-about-panel bg-light-alt p-0 rounded-4 overflow-hidden position-relative" data-aos="fade-up" data-aos-duration="1000">
         <div class="row g-0 align-items-center">
@@ -399,6 +422,31 @@ public class Developer {
   <!-- Career History Section - Unified Panel -->
   <section class="py-5 my-5 position-relative overflow-hidden subtle-grid-bg">
     <div class="container position-relative h-100">
+      
+      <!-- Code Background Element - Experience Section -->
+      <div class="code-bg-decoration experience-code">// KarmanyeTechLLP.java
+@Service
+public class BackendService {
+    
+    @Autowired
+    private JWTAuthProvider jwtAuth;
+    
+    @GetMapping("/api/secure")
+    public ResponseEntity<Data> secureEndpoint() {
+        // JWT-based authentication
+        // Role-based access control
+        return ResponseEntity.ok(data);
+    }
+    
+    @PostMapping("/api/payment")
+    public PaymentResponse processPayment() {
+        // Razorpay integration
+        // Structured logging
+        // Error handling
+        return paymentService.process();
+    }
+}</div>
+      
       <!-- Unified Career History Panel -->
       <div class="unified-career-panel bg-light-alt p-0 rounded-4 overflow-hidden position-relative" data-aos="fade-up" data-aos-duration="1000">
         <div class="row g-0 h-100">
@@ -466,15 +514,15 @@ public class Experience {
               <i class="fas fa-graduation-cap"></i>
             </div>
             <pre class="code-background"><code>// Education.java
-public class Education {
-    String degree = "Bachelor of Engineering (IT)";
-    String college = "L. J. Institute of Engineering and Technology, Ahmedabad";
-    
-    String[] focus = {
-        "Software Engineering",
-        "Web Systems"
-    };
-}</code></pre>
+              public class Education {
+                  String degree = "Bachelor of Engineering (IT)";
+                  String college = "L. J. Institute of Engineering and Technology, Ahmedabad";
+                  
+                  String[] focus = {
+                      "Software Engineering",
+                      "Web Systems"
+                  };
+              }</code></pre>
             <div class="content-title mb-4 fw-bold">Education</div>
 
             <div class="mb-4 education-item">
@@ -483,11 +531,11 @@ public class Education {
               <p class="text-muted-custom" style="font-size: 0.9rem; font-style: italic;">(Education is just context, not the main story)</p>
             </div>
 
-            <!-- Resume Download Button -->
+            <!-- Certifications Button -->
             <div class="mt-4 pt-3">
-              <a href="documents/resume.pdf" download class="btn btn-custom d-flex align-items-center justify-content-center gap-2 resume-download-btn">
-                <i class="fas fa-download"></i>
-                <span>Download Full Resume</span>
+              <a href="about.html#certifications" class="btn btn-custom d-flex align-items-center justify-content-center gap-2 resume-download-btn">
+                <i class="fas fa-certificate"></i>
+                <span>Certifications</span>
               </a>
             </div>
 
@@ -896,51 +944,56 @@ public class Education {
   </section> -->
 
   <!-- Footer Section -->
-  <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+  <footer class="rounded-4 m-3 m-lg-4" data-aos="fade-up">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-3">
-          <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Varun</div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3 class="text-light-custom content-title mb-4" style="font-size: 42px;">Varun</h3>
           <p class="text-light-custom mb-4">
-            Full-Stack Developer passionate about building secure, scalable web applications. Let's create something amazing together.
+            Creating digital experiences that make a difference. Let's build something amazing together.
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="https://github.com/TechnicalJin" target="_blank"><i class="fab fa-github social-icon text-light-custom"></i></a>
-            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank"><i class="fab fa-linkedin social-icon text-light-custom"></i></a>
-            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank"><i class="fab fa-instagram social-icon text-light-custom"></i></a>
-            <a href="https://www.fiverr.com/varunbuilds" target="_blank"><i class="fas fa-briefcase social-icon text-light-custom"></i></a>
-            <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank"><i class="fas fa-user-tie social-icon text-light-custom"></i></a>
+            <a href="#"><i class="fab fa-github social-icon"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in social-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+            <a href="#"><i class="fab fa-dribbble social-icon"></i></a>
+            <a href="#"><i class="fab fa-behance social-icon"></i></a>
           </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-4 mb-md-0">
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="footer-link text-yellow">Home</a></li>
+            <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
             <li class="mb-2"><a href="about.html" class="footer-link">About</a></li>
-            <li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
             <li class="mb-2"><a href="project.html" class="footer-link">Projects</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2">
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="documents/resume.pdf" class="footer-link">Download Resume</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Services</a></li>
             <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
+        <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Privacy</a></li>
+          </ul>
+        </div>
+
         <div class="col-md-5">
-          <p class="text-light-custom mb-4">
-            Just feel free to contact if you wanna collaborate with me, or simply have a conversation.
+          <p class="text-light-custom mb-3">
+            Let's collaborate and create something extraordinary together.
           </p>
-          <p class="text-light-custom fst-italic fs-5"><a href="mailto:varunjinjala.company@gmail.com"
-              class="text-light-custom text-decoration-none">varunjinjala.company@gmail.com</a></p>
+          <p class="text-light-custom fs-5">
+            <a href="mailto:contact@varun.com" class="text-light-custom text-decoration-none">
+              <i class="far fa-envelope me-2"></i>contact@varun.com
+            </a>
+          </p>
         </div>
       </div>
 
-      <div class="border-top border-light pt-4">
-        <p class="text-light-custom text-center">
-          ©2025 Varun | All Rights Reserved.
+      <div class="border-top pt-4" style="border-color: rgba(59, 130, 246, 0.1) !important;">
+        <p class="text-light-custom text-center mb-0">
+          © 2025 Varun. All rights reserved.
         </p>
       </div>
     </div>
@@ -1034,6 +1087,19 @@ public class Education {
           
           latestWorksContainer.innerHTML += slideHTML;
         });
+
+        // Smooth scroll for anchor links (applies to footer links with # anchors)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && document.querySelector(href)) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
         
         // Reinitialize Swiper after adding content
         // The Swiper initialization should happen in script.js after content is loaded

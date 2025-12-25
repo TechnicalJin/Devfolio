@@ -465,25 +465,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Footer */
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+}
+
 .footer-link {
+  color: var(--text-light);
   text-decoration: none;
+  font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
 }
 
 .footer-link:hover {
-  color: var(--secondary-color) !important;
+  color: var(--secondary-color);
   transform: translateX(5px);
 }
 
 .social-icon {
+  color: var(--text-light);
+  font-size: 20px;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 
 .social-icon:hover {
-  color: var(--secondary-color) !important;
-  transform: translateY(-5px);
+  color: var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 /* Responsive Design */

@@ -1557,17 +1557,7 @@ section .container {
     color: var(--text-light);
 }
 
-.footer-link {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 800;
-    transition: all 0.3s ease;
-}
 
-.footer-link:hover {
-    color: var(--secondary-color);
-    transform: translateX(5px);
-}
 
 .social-icon {
     width: 24px;
@@ -2513,3 +2503,107 @@ section + section {
 }
 
 /* End of Bento Grid Improvements */
+
+/* ======================================
+   Code Background Elements - Strategic Placement
+   ====================================== */
+
+.code-bg-decoration {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    white-space: pre;
+    color: rgba(148, 163, 184, 0.06);
+    overflow: hidden;
+}
+
+.code-bg-decoration.hero-code {
+    top: 5%;
+    right: -5%;
+    transform: rotate(-5deg);
+    opacity: 0.06;
+    max-width: 400px;
+}
+
+.code-bg-decoration.about-code {
+    top: 10%;
+    left: -5%;
+    transform: rotate(-3deg);
+    opacity: 0.05;
+    max-width: 450px;
+}
+
+.code-bg-decoration.experience-code {
+    bottom: 5%;
+    right: -5%;
+    transform: rotate(3deg);
+    opacity: 0.07;
+    max-width: 420px;
+}
+
+.code-bg-decoration.footer-code {
+    bottom: 10%;
+    left: -3%;
+    transform: rotate(-2deg);
+    opacity: 0.07;
+    max-width: 380px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.footer-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--secondary-color);
+  transform: translateX(5px);
+}
+
+.social-icon {
+  color: var(--text-light);
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness - Hide on small screens */
+@media (max-width: 768px) {
+    .code-bg-decoration {
+        display: none;
+    }
+}
+
+/* Ensure parent containers have relative positioning */
+.position-relative {
+    position: relative;
+}
+
+/* Additional overflow control for sections with code backgrounds */
+section.overflow-hidden {
+    overflow: hidden;
+}
+
+.hero-section-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+/* End of Code Background Elements */
