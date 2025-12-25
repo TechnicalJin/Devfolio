@@ -321,52 +321,56 @@
   </main>
 
   <!-- Footer Section -->
-  <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+  <footer class="rounded-4 m-3 m-lg-4" data-aos="fade-up">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-3">
-          <h3 class="text-light-custom content-title mb-4">Varun</h3>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3 class="text-light-custom content-title mb-4" style="font-size: 42px;">Varun</h3>
           <p class="text-light-custom mb-4">
-            Full-Stack Developer passionate about building secure, scalable web applications. Let's create something amazing together.
+            Creating digital experiences that make a difference. Let's build something amazing together.
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="https://github.com/TechnicalJin" target="_blank"><i class="fab fa-github social-icon text-light-custom"></i></a>
-            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank"><i class="fab fa-linkedin social-icon text-light-custom"></i></a>
-            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank"><i class="fab fa-instagram social-icon text-light-custom"></i></a>
-            <a href="https://www.fiverr.com/varunbuilds" target="_blank"><i class="fas fa-briefcase social-icon text-light-custom"></i></a>
-            <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank"><i class="fas fa-user-tie social-icon text-light-custom"></i></a>
+            <a href="#"><i class="fab fa-github social-icon"></i></a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in social-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+            <a href="#"><i class="fab fa-dribbble social-icon"></i></a>
+            <a href="#"><i class="fab fa-behance social-icon"></i></a>
           </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-4 mb-md-0">
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="#" class="footer-link text-yellow">Home</a></li>
-            <li class="mb-2"><a href="#" class="footer-link">About</a></li>
-            <li class="mb-2"><a href="#" class="footer-link">Services</a></li>
-            <li class="mb-2"><a href="#" class="footer-link">Portfolio</a></li>
+            <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="footer-link">About</a></li>
+            <li class="mb-2"><a href="project.html" class="footer-link">Projects</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Services</a></li>
+            <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-4 mb-md-0">
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="#" class="footer-link">Blogs</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
             <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Privacy</a></li>
           </ul>
         </div>
 
         <div class="col-md-5">
-          <p class="text-light-custom mb-4">
-            Just feel free to contact if you wanna collaborate with me, or simply have a conversation.
+          <p class="text-light-custom mb-3">
+            Let's collaborate and create something extraordinary together.
           </p>
-          <p class="text-light-custom fst-italic fs-5"><a href="mailto:varunjinjala.company@gmail.com"
-              class="text-light-custom text-decoration-none">varunjinjala.company@gmail.com</a></p>
+          <p class="text-light-custom fs-5">
+            <a href="mailto:contact@varun.com" class="text-light-custom text-decoration-none">
+              <i class="far fa-envelope me-2"></i>contact@varun.com
+            </a>
+          </p>
         </div>
       </div>
 
-      <div class="border-top border-light pt-4">
-        <p class="text-light-custom text-center">
-          ©2025 Varun. Designed by <a href="https://templatesjungle.com/" target="_blank"
-            class="text-light-custom text-decoration-underline">TemplatesJungle</a>.
+      <div class="border-top pt-4" style="border-color: rgba(59, 130, 246, 0.1) !important;">
+        <p class="text-light-custom text-center mb-0">
+          © 2025 Varun. All rights reserved.
         </p>
       </div>
     </div>
@@ -380,6 +384,21 @@
   <script src="js/plugins.js"></script>
   <!-- Script js -->
   <script src="js/script.js"></script>
+
+  <script>
+    // Smooth scroll for anchor links (applies to footer links with # anchors)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && document.querySelector(href)) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+  </script>
 </body>
 
 </html>
