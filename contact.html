@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- custom style CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 
@@ -158,56 +161,70 @@
         fill="black" />
     </symbol>
   </svg>
-  <!-- Fullscreen Menu Overlay -->
-  <div id="fullscreenMenu" class="fullscreen-menu-overlay">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-7">
-          <button id="closeMenuBtn" class="close-menu-btn position-absolute top-0 end-0 m-4">
-            <i class="fas fa-times fs-1"></i>
-          </button>
+  
+  <!-- Static Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">Varun</a>
 
-          <nav class="fullscreen-menu-nav">
-            <ul class="list-unstyled">
-              <li><a href="index.html" class="menu-link">Home</a></li>
-              <li><a href="about.html" class="menu-link">About Me</a></li>
-              <li><a href="services.html" class="menu-link">Services</a></li>
-              <li><a href="project.html" class="menu-link">Projects</a></li>
-              <li><a href="contact.html" class="menu-link">Contact</a></li>
-              <li><a href="documents/resume.pdf" download class="menu-link resume-link">
-                <i class="fas fa-download me-2"></i>Download Resume
-              </a></li>
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="documents/resume.pdf" download class="resume-btn">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </li>
             </ul>
-          </nav>
 
-          <div class="menu-social-links mt-5">
-            <a href="https://github.com/TechnicalJin" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.fiverr.com/varunbuilds" target="_blank" class="social-link"><i class="fas fa-briefcase"></i></a>
-          </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+                <a href="documents/resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+            </li>
+        </ul>
+
+        <!-- Social Links in Mobile Menu -->
+        <div class="mobile-social-links">
+            <a href="https://github.com/TechnicalJin" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jinjala-varun-2a11182b4" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/_varun__.098?igsh=MTF0d3R3amV3YjBlcQ==" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.fiverr.com/varunbuilds" target="_blank" class="social-icon">
+                <i class="fas fa-briefcase"></i>
+            </a>
+        </div>
     </div>
-  </div>
 
-  <!-- Header/Hero Section -->
-  <header class="position-relative">
-    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
-
-      <nav class="d-flex justify-content-between">
-        <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Varun</div>
-
-        <button class="menu-toggle-btn btn d-flex align-items-center gap-2" data-aos="fade-left"
-          data-aos-duration="1000">
-          <span class="text-light-custom fw-bold">MENU</span>
-          <i class="fas fa-bars text-light-custom"></i>
-        </button>
-      </nav>
-
-    </div>
-
-  </header>
   <main>
     <div class="container">
 
@@ -399,6 +416,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
   </script>
+
+  <script>
+        // Menu Toggle Functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Toggle mobile menu
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close menu when clicking on a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Add scroll effect to navbar
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
