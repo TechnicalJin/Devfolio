@@ -64,6 +64,10 @@ const projectsData = {
     
     screenshots: [
       {
+        label: "Security & Authentication",
+        url: "images/Portfolio_Image/AI_REVIEW/ai6.png"
+      },
+      {
         label: "Admin Dashboard",
         url: "images/Portfolio_Image/AI_REVIEW/ai1.png"
       },
@@ -82,10 +86,6 @@ const projectsData = {
       {
         label: "Review History & Export",
         url: "images/Portfolio_Image/AI_REVIEW/ai5.png"
-      },
-      {
-        label: "Security & Authentication",
-        url: "images/Portfolio_Image/AI_REVIEW/ai6.png"
       },
       {
         label: "Multi-Tenant Management",

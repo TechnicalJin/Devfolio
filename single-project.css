@@ -12,6 +12,91 @@
     --heading-color: #F1F5F9;
 }
 
+/* Back Button Styles */
+.back-button-wrapper {
+    padding: 1rem 0;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 1.75rem;
+    background: transparent;
+    border: 2px solid rgba(94, 234, 212, 0.3);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+}
+
+.back-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(94, 234, 212, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.back-button:hover::before {
+    width: 100%;
+}
+
+.back-button:hover {
+    background: rgba(94, 234, 212, 0.1);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 25px rgba(94, 234, 212, 0.3);
+}
+
+.back-button i {
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.back-button:hover i {
+    transform: translateX(-5px);
+}
+
+.back-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive back button */
+@media (max-width: 768px) {
+    .back-button-wrapper {
+        padding: 0.5rem 0;
+    }
+    
+    .back-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .back-button i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-button {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
@@ -283,76 +368,363 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-/* Screenshots Section */
-.screenshot-wrapper {
+/* ============================================================
+   SCREENSHOT GRID SYSTEM (16:9 STANDARDIZED)
+   ============================================================
+   Rules:
+   - All grid previews MUST be 16:9 aspect ratio
+   - Max 6 screenshots displayed in grid
+   - Click-to-expand modal for full view
+   - No masonry, no auto-sizing, no exceptions
+   ============================================================ */
+
+/* Screenshots Section Container */
+.screenshots-section {
+    margin-bottom: 4rem;
+}
+
+.screenshots-section h2,
+.screenshots-section h3 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Screenshot Card (16:9 Container) */
+.screenshot-card {
     position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    background: rgba(30, 41, 59, 0.5);
-    border: 2px solid rgba(59, 130, 246, 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.screenshot-wrapper:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-blue);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
-}
-
-.screenshot-label {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    z-index: 2;
-    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563EB 100%);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-}
-
-.screenshot-figure {
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.screenshot-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-}
-
-/* Video specific styles */
-.screenshot-img[src*=".mp4"],
-.screenshot-img[src*=".webm"],
-.screenshot-img[src*=".ogg"],
-video.screenshot-img {
+    cursor: pointer;
     border-radius: 12px;
-    background-color: #000;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(94, 234, 212, 0.1);
 }
 
-.screenshot-wrapper:hover .screenshot-img {
-    transform: scale(1.05);
+.screenshot-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(94, 234, 212, 0.4);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3), 0 0 20px rgba(94, 234, 212, 0.2);
 }
 
-.screenshot-figure::after {
-    content: '';
+.screenshot-card:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+}
+
+/* 16:9 Frame (MANDATORY ASPECT RATIO) */
+.screenshot-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0A192F;
+}
+
+/* Preview Image (Always 16:9 with cover) */
+.screenshot-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot-card:hover .screenshot-preview {
+    transform: scale(1.08);
+}
+
+/* Hover Overlay */
+.screenshot-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(94, 234, 212, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(94, 234, 212, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     opacity: 0;
     transition: opacity 0.4s ease;
+    z-index: 2;
 }
 
-.screenshot-wrapper:hover .screenshot-figure::after {
+.screenshot-card:hover .screenshot-overlay {
     opacity: 1;
+}
+
+.screenshot-overlay i {
+    font-size: 2.5rem;
+    color: white;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.screenshot-overlay span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Screenshot Caption */
+.screenshot-caption {
+    padding: 1rem 1.25rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+    background: rgba(17, 34, 64, 0.6);
+    border-top: 1px solid rgba(94, 234, 212, 0.1);
+}
+
+/* View All Button */
+.btn-view-all-screenshots {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid rgba(94, 234, 212, 0.4);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-view-all-screenshots::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(94, 234, 212, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.btn-view-all-screenshots:hover::before {
+    width: 100%;
+}
+
+.btn-view-all-screenshots:hover {
+    background: rgba(94, 234, 212, 0.1);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(94, 234, 212, 0.4);
+}
+
+/* ============================================================
+   SCREENSHOT MODAL (FULL RESOLUTION VIEWER)
+   ============================================================ */
+
+.screenshot-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 25, 47, 0.98);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.screenshot-modal.active {
+    opacity: 1;
+}
+
+/* Modal Content Wrapper */
+.modal-content-wrapper {
+    position: relative;
+    max-width: 95vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Modal Image (Original Aspect Ratio) */
+.modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(94, 234, 212, 0.3);
+    border: 2px solid rgba(94, 234, 212, 0.3);
+    object-fit: contain;
+}
+
+/* Modal Counter */
+.modal-counter {
+    padding: 0.75rem 1.5rem;
+    background: rgba(30, 41, 59, 0.9);
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    border: 1px solid rgba(94, 234, 212, 0.3);
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.9);
+    border: 2px solid rgba(94, 234, 212, 0.3);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.modal-close-btn:hover {
+    background: rgba(94, 234, 212, 0.2);
+    border-color: var(--secondary-color);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(94, 234, 212, 0.5);
+}
+
+/* Modal Navigation Buttons */
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.9);
+    border: 2px solid rgba(94, 234, 212, 0.3);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.modal-prev-btn {
+    left: 2rem;
+}
+
+.modal-next-btn {
+    right: 2rem;
+}
+
+.modal-nav-btn:hover {
+    background: rgba(94, 234, 212, 0.2);
+    border-color: var(--secondary-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(94, 234, 212, 0.5);
+}
+
+.modal-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .screenshots-section h2,
+    .screenshots-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .screenshot-card:hover {
+        transform: none;
+    }
+
+    .screenshot-overlay i {
+        font-size: 2rem;
+    }
+
+    .screenshot-overlay span {
+        font-size: 0.85rem;
+    }
+
+    .modal-close-btn,
+    .modal-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .modal-close-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .modal-prev-btn {
+        left: 1rem;
+    }
+
+    .modal-next-btn {
+        right: 1rem;
+    }
+
+    .modal-content-wrapper {
+        max-width: 100vw;
+        max-height: 95vh;
+    }
+
+    .modal-image {
+        max-height: 80vh;
+    }
+
+    .btn-view-all-screenshots {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .screenshot-caption {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .modal-counter {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 /* Call to Action */
@@ -581,11 +953,6 @@ video.screenshot-img {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
-    }
-    
-    .screenshot-label {
-        font-size: 0.8rem;
-        padding: 0.4rem 1rem;
     }
 }
 
