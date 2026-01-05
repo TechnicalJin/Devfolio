@@ -64,19 +64,6 @@
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="position-relative">
-    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
-      <nav class="d-flex justify-content-between align-items-center">
-        <div class="text-light-custom content-title fw-bold" data-aos="fade-right" data-aos-duration="1000">Portfolio</div>
-        <button class="menu-toggle-btn btn d-flex align-items-center gap-2" data-aos="fade-left" data-aos-duration="1000">
-          <span class="text-light-custom fw-bold">MENU</span>
-          <i class="fas fa-bars text-light-custom"></i>
-        </button>
-      </nav>
-    </div>
-  </header>
-
   <!-- Loading State -->
   <div id="loadingState" class="container text-center py-5">
     <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
@@ -99,6 +86,14 @@
   <main id="projectContent" style="display: none;">
     <div class="container">
       <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+
+        <!-- Back Button -->
+        <div class="back-button-wrapper my-4" data-aos="fade-right">
+          <a href="project.html" class="back-button">
+            <i class="fas fa-arrow-left me-2"></i>
+            <span>Back to Projects</span>
+          </a>
+        </div>
 
         <!-- Project Header -->
         <section id="project-header" class="my-5 py-5" data-aos="fade-up">
@@ -234,6 +229,23 @@
     </div>
   </main>
 
+  <!-- Screenshot Modal -->
+  <div id="screenshotModal" class="screenshot-modal" style="display: none;">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+      <i class="fas fa-times"></i>
+    </button>
+    <button class="modal-nav-btn modal-prev-btn" id="modalPrevBtn" aria-label="Previous screenshot">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="modal-nav-btn modal-next-btn" id="modalNextBtn" aria-label="Next screenshot">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="modal-content-wrapper">
+      <img id="modalImage" src="" alt="Project Screenshot" class="modal-image" />
+      <div class="modal-counter" id="modalCounter"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="rounded-4 m-3 m-lg-4" data-aos="fade-up">
     <div class="container">
@@ -262,21 +274,13 @@
           </ul>
         </div>
 
-        <div class="col-md-2 mb-4 mb-md-0">
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
-            <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
-            <li class="mb-2"><a href="#" class="footer-link">Privacy</a></li>
-          </ul>
-        </div>
-
         <div class="col-md-5">
           <p class="text-light-custom mb-3">
             Let's collaborate and create something extraordinary together.
           </p>
           <p class="text-light-custom fs-5">
-            <a href="mailto:contact@varun.com" class="text-light-custom text-decoration-none">
-              <i class="far fa-envelope me-2"></i>contact@varun.com
+            <a href="mailto:varunjinjala.company@gmail.com" class="text-light-custom text-decoration-none">
+              <i class="far fa-envelope me-2"></i>varunjinjala.company@gmail.com
             </a>
           </p>
         </div>
@@ -441,33 +445,129 @@
         ).join('');
       }
 
-      // Populate screenshots
+      // Populate screenshots (Max 6 in grid, 16:9 aspect ratio)
       const screenshotsContainer = document.getElementById('screenshotsContainer');
       screenshotsContainer.innerHTML = '';
 
-      project.screenshots.forEach((screenshot, index) => {
-        const colClass = index === 0 || index === 3 ? 'col-12' : 'col-lg-6';
-        
-        // Check if the URL is a video file
-        const isVideo = screenshot.url.match(/\.(mp4|webm|ogg|mov)$/i);
-        
-        const mediaElement = isVideo 
-          ? `<video src="${screenshot.url}" class="img-fluid screenshot-img" controls autoplay muted loop playsinline>
-              Your browser does not support the video tag.
-            </video>`
-          : `<img src="${screenshot.url}" alt="${screenshot.label}" class="img-fluid screenshot-img">`;
+      const maxGridScreenshots = Math.min(project.screenshots.length, 6);
+
+      for (let i = 0; i < maxGridScreenshots; i++) {
+        const screenshot = project.screenshots[i];
+        const caption = screenshot.label || screenshot.caption || `Screenshot ${i + 1}`;
         
         screenshotsContainer.innerHTML += `
-          <div class="${colClass}">
-            <div class="screenshot-wrapper">
-              <div class="screenshot-label">${screenshot.label}</div>
-              <figure class="screenshot-figure">
-                ${mediaElement}
-              </figure>
+          <div class="col-lg-6 col-12">
+            <div class="screenshot-card" data-index="${i}" role="button" tabindex="0">
+              <div class="screenshot-frame">
+                <img src="${screenshot.url}" alt="${caption}" class="screenshot-preview" loading="lazy" />
+                <div class="screenshot-overlay">
+                  <i class="fas fa-search-plus"></i>
+                  <span>Click to View</span>
+                </div>
+              </div>
+              <p class="screenshot-caption">${caption}</p>
             </div>
           </div>
         `;
+      }
+
+      // Add "View All" button if more than 6 screenshots
+      if (project.screenshots.length > 6) {
+        screenshotsContainer.innerHTML += `
+          <div class="col-12 text-center mt-4">
+            <button class="btn-view-all-screenshots" data-index="0" type="button">
+              <i class="fas fa-images me-2"></i>
+              View All ${project.screenshots.length} Screenshots
+            </button>
+          </div>
+        `;
+      }
+
+      // Screenshot modal functionality
+      let currentModalIndex = 0;
+      const modal = document.getElementById('screenshotModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalCounter = document.getElementById('modalCounter');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const modalPrevBtn = document.getElementById('modalPrevBtn');
+      const modalNextBtn = document.getElementById('modalNextBtn');
+
+      function openModal(index) {
+        currentModalIndex = index;
+        updateModalContent();
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => modal.classList.add('active'), 10);
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(() => {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
+
+      function updateModalContent() {
+        const screenshot = project.screenshots[currentModalIndex];
+        const caption = screenshot.label || screenshot.caption || `Screenshot ${currentModalIndex + 1}`;
+        modalImage.src = screenshot.url;
+        modalImage.alt = caption;
+        modalCounter.textContent = `${currentModalIndex + 1} / ${project.screenshots.length}`;
+        
+        // Toggle nav buttons
+        modalPrevBtn.style.display = currentModalIndex === 0 ? 'none' : 'flex';
+        modalNextBtn.style.display = currentModalIndex === project.screenshots.length - 1 ? 'none' : 'flex';
+      }
+
+      function navigateModal(direction) {
+        currentModalIndex = Math.max(0, Math.min(project.screenshots.length - 1, currentModalIndex + direction));
+        updateModalContent();
+      }
+
+      // Event listeners for modal
+      modalCloseBtn.addEventListener('click', closeModal);
+      modalPrevBtn.addEventListener('click', () => navigateModal(-1));
+      modalNextBtn.addEventListener('click', () => navigateModal(1));
+      
+      // Click outside modal to close
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
       });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+          if (e.key === 'Escape') closeModal();
+          if (e.key === 'ArrowLeft') navigateModal(-1);
+          if (e.key === 'ArrowRight') navigateModal(1);
+        }
+      });
+
+      // Attach click handlers to screenshot cards
+      setTimeout(() => {
+        document.querySelectorAll('.screenshot-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const index = parseInt(card.dataset.index);
+            openModal(index);
+          });
+          
+          // Keyboard accessibility
+          card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const index = parseInt(card.dataset.index);
+              openModal(index);
+            }
+          });
+        });
+
+        // Attach click handler to "View All" button
+        const viewAllBtn = document.querySelector('.btn-view-all-screenshots');
+        if (viewAllBtn) {
+          viewAllBtn.addEventListener('click', () => openModal(0));
+        }
+      }, 100);
 
       // Hide loading, show content
       loadingState.style.display = 'none';
